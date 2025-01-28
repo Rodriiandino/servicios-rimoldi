@@ -1,22 +1,141 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import SEO from '@components/SEO.astro'
+import Footer from '@components/ui/footer.astro'
+import Header from '@components/ui/header.astro'
+import '@fontsource-variable/noto-sans'
+import { ClientRouter } from 'astro:transitions'
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string
+  description: string
+  canonical?: string
+  image?: string
+}
+const { title, description, canonical, image } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <ClientRouter />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+
+    <style is:global>
+      :root {
+        --main-color: #050505;
+        --second-color: #f1961c;
+        --third-color: #f8fbfa;
+        --fourth-color: #777777;
+        --background-color: #050505;
+
+        --max-width: calc(1250px + 4rem);
+        --padding-side: 2rem;
+        --border-radius: 0.625rem;
+
+        --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+        --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+        --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+        --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+        --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+        --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+        --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+        --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+      }
+
+      @font-face {
+        font-family: 'quicksilver';
+        src:
+          url('/fonts/quicksilver_400-webfont.woff2') format('woff2'),
+          url('/fonts/quicksilver_400-webfont.woff') format('woff');
+        font-display: swap;
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        font-size: 16px;
+      }
+
+      body {
+        width: 100%;
+        font-family: 'Noto Sans Variable', sans-serif;
+        background-color: var(--background-color);
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+
+      main {
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-wrap: balance;
+        color: var(--second-color);
+        font-family: 'quicksilver', sans-serif;
+      }
+
+      p {
+        text-wrap: pretty;
+        color: var(--third-color);
+      }
+
+      a {
+        color: var(--third-color);
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--second-color);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: var(--background-color);
+      }
+
+      ::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+    </style>
+  </body>
+</html>

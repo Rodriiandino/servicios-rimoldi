@@ -1,0 +1,92 @@
+---
+const phrase = [
+  'Rellenos',
+  'Compactaciones',
+  'Pilotajes',
+  'Desmonte',
+  'Zanjeos',
+  'Excavaciones',
+  'Nivelaciones'
+]
+
+const duplicatedPhrase = [...phrase, ...phrase]
+---
+
+<section class='banner'>
+  <div class='banner-content'>
+    {
+      duplicatedPhrase.map(word => (
+        <div class='banner-item-wrapper'>
+          <strong class='banner-item tracking-wide'>{word}</strong>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .banner {
+    background-color: var(--second-color);
+    padding: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 5rem;
+  }
+
+  .banner::before,
+  .banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .banner::before {
+    left: 0;
+    background: linear-gradient(to right, var(--second-color), transparent);
+  }
+
+  .banner::after {
+    right: 0;
+    background: linear-gradient(to left, var(--second-color), transparent);
+  }
+
+  .banner-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(250px, 1fr);
+    gap: 1rem;
+    animation: scroll 25s linear infinite;
+  }
+
+  .banner-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner-item {
+    font-family: 'Quicksilver', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding-top: 0.1em;
+    color: var(--main-color);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .banner-content {
+      animation-play-state: paused;
+    }
+  }
+</style>

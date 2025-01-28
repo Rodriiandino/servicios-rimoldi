@@ -1,0 +1,92 @@
+---
+import Logo from '@components/icons/logo.astro'
+import Anchor from './anchor.astro'
+const { pathname } = Astro.url
+
+const nav = [
+  {
+    href: '/',
+    text: 'Inicio',
+    current: pathname === '/',
+    ariaLabel: 'Ir a la página de inicio'
+  },
+  {
+    href: '/servicios',
+    text: 'Servicios',
+    current: pathname === '/servicios',
+    ariaLabel: 'Ir a la página de servicios'
+  },
+  {
+    href: '/maquinarias',
+    text: 'Maquinarias',
+    current: pathname === '/maquinarias',
+    ariaLabel: 'Ir a la página de maquinarias'
+  },
+  {
+    href: '/proyectos',
+    text: 'Proyectos',
+    current: pathname === '/proyectos',
+    ariaLabel: 'Ir a la página de proyectos'
+  },
+  {
+    href: '/sobre-nosotros',
+    text: 'Nosotros',
+    current: pathname === '/sobre-nosotros',
+    ariaLabel: 'Ir a la página de sobre nosotros'
+  }
+]
+
+const contact = {
+  href: '/contacto',
+  text: 'Contacto',
+  current: pathname === '/contacto',
+  ariaLabel: 'Ir a la página de contacto'
+}
+---
+
+<header
+  class='w-full h-[90px] bg-background-color flex items-center justify-center'
+>
+  <nav
+    class='w-full max-w-max-width h-full flex items-center justify-between px-side'
+  >
+    <a href='/'>
+      <Logo />
+    </a>
+    <ul class='flex items-center gap-x-5'>
+      {
+        nav.map(({ href, text, current, ariaLabel }) => (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                current && 'current',
+                'text--1',
+                text === 'Contacto' && 'nav__contact',
+                'hover:text-second-color transition-colors'
+              ]}
+              aria-label={ariaLabel}
+            >
+              {text}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <Anchor
+          href={contact.href}
+          alternative={contact.current}
+          ariaLabel='Ir a la página de contacto'
+        >
+          {contact.text}
+        </Anchor>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .current {
+    color: var(--second-color);
+  }
+</style>
