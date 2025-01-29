@@ -1,5 +1,14 @@
 ---
+import ArrowRight from '@components/icons/home/arrow-right.astro'
 import Anchor from '@components/ui/anchor.astro'
+
+const descriptions = [
+  'Más de 40 años de experiencia en excavaciones, nivelaciones y compactaciones para proyectos de construcción de cualquier envergadura.',
+  'Especialistas en nivelaciones de terrenos y calles para proyectos de construcción.',
+  'Compactaciones con maquinaria avanzada, garantizando estabilidad y calidad.',
+  'Desmontes, extracción de árboles y limpieza de terrenos sin complicaciones.',
+  'Pilotajes y perforaciones para estructuras seguras y confiables.'
+]
 ---
 
 <section
@@ -8,19 +17,42 @@ import Anchor from '@components/ui/anchor.astro'
   <div
     class='text-center w-full py-5 flex flex-col items-center justify-center gap-6 bg-background-color bg-opacity-75 mb-[90px]'
   >
-    <div>
-      <h1 class='text-3 font-bold tracking-tight sm:text-4 font-noto'>
-        Movimiento de Suelos Experto
+    <div class='max-w-max-width px-side'>
+      <h1
+        class='text-3 font-bold tracking-tight md:text-4 font-noto animate-fade-up animate-once animate-ease-in-out'
+      >
+        Líderes en <strong class='font-bold text-third-color'
+          >Movimiento de Suelos</strong
+        >
       </h1>
-      <p class='text--1 font-medium sm:text-0'>
-        Excavaciones, nivelaciones y compactaciones para proyectos de
-        construcción de cualquier envergadura
-      </p>
+
+      <div class='sr-only'>
+        <h2>Nuestros servicios principales</h2>
+        <ul>
+          {descriptions.map(desc => <li>{desc}</li>)}
+        </ul>
+      </div>
+
+      <div
+        id='animated-description'
+        class='md:h-[3em] h-fit animate-fade-up animate-once animate-delay-300 animate-ease-in-out'
+        aria-live='polite'
+        aria-atomic='true'
+      >
+        <p
+          class='text-xs font-medium md:text-0 transition-opacity duration-500'
+          role='status'
+        >
+          {descriptions[0]}
+        </p>
+      </div>
     </div>
 
-    <div class='flex items-center justify-center gap-x-6'>
+    <nav
+      class='max-w-max-width px-side flex items-center justify-center gap-x-6'
+    >
       <Anchor href='/servicios' ariaLabel='Ir a la página de servicios'>
-        Nuestros Servicios
+        Nuestros Servicios <ArrowRight />
       </Anchor>
 
       <Anchor
@@ -30,7 +62,7 @@ import Anchor from '@components/ui/anchor.astro'
       >
         Solicitar Cotización
       </Anchor>
-    </div>
+    </nav>
   </div>
 </section>
 
@@ -59,4 +91,115 @@ import Anchor from '@components/ui/anchor.astro'
     z-index: -1;
     filter: drop-shadow(0px -10px 10px rgba(05, 05, 05, 0.1));
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .fade-out {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  .fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
 </style>
+
+<script>
+  const descriptions = [
+    'Especialistas en nivelaciones de terrenos y calles para proyectos de construcción.',
+    'Compactaciones con maquinaria avanzada, garantizando estabilidad y calidad.',
+    'Desmontes, extracción de árboles y limpieza de terrenos sin complicaciones.',
+    'Pilotajes y perforaciones para estructuras seguras y confiables.',
+    'Más de 40 años de experiencia en excavaciones, nivelaciones y compactaciones para proyectos de construcción de cualquier envergadura.'
+  ]
+
+  class AnimatedDescription {
+    container: HTMLElement
+    descriptions: string[]
+    currentIndex: number
+    paragraph: HTMLParagraphElement | null
+    isAnimating: boolean
+    prefersReducedMotion: boolean
+
+    constructor(container: HTMLElement, descriptions: string[]) {
+      this.container = container
+      this.descriptions = descriptions
+      this.currentIndex = 0
+      this.paragraph = container.querySelector('p')
+      this.isAnimating = false
+
+      this.prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches
+
+      this.init()
+    }
+
+    init() {
+      if (this.paragraph) {
+        this.paragraph.textContent = this.descriptions[0]
+        if (!this.prefersReducedMotion) {
+          this.paragraph.classList.add('fade-in')
+          this.startAnimation()
+        }
+      }
+    }
+
+    async animateText() {
+      if (this.isAnimating || this.prefersReducedMotion) return
+      this.isAnimating = true
+
+      if (!this.paragraph) return
+      this.paragraph.classList.remove('fade-in')
+      this.paragraph.classList.add('fade-out')
+
+      await new Promise(resolve => setTimeout(resolve, 500))
+
+      this.currentIndex = (this.currentIndex + 1) % this.descriptions.length
+      this.paragraph.textContent = this.descriptions[this.currentIndex]
+
+      this.paragraph.classList.remove('fade-out')
+      this.paragraph.classList.add('fade-in')
+
+      this.isAnimating = false
+    }
+
+    startAnimation() {
+      if (!this.prefersReducedMotion) {
+        setInterval(() => this.animateText(), 5000)
+      }
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const container = document.getElementById('animated-description')
+    if (container) {
+      setTimeout(() => {
+        new AnimatedDescription(container, descriptions)
+      }, 5000)
+    }
+  })
+</script>

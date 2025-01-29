@@ -1,0 +1,19 @@
+---
+import Anchor from '@components/ui/anchor.astro'
+import HomeSection from './ui/home-section.astro'
+---
+
+<HomeSection>
+  <div class='flex items-center justify-center flex-col gap-4 h-[400px]'>
+    <h3 class='font-noto text-2 md:text-3 font-bold text-center'>
+      ¿Necesitas una cotización para tu proyecto?
+    </h3>
+    <p class='text-center text-xs'>
+      Contáctanos hoy mismo y obtén una cotización personalizada para tu
+      proyecto de movimiento de suelos.
+    </p>
+    <Anchor href='/contacto' ariaLabel='Ir a la página de contacto'
+      >Cotizar mi proyecto</Anchor
+    >
+  </div>
+</HomeSection>

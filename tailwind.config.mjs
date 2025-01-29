@@ -24,8 +24,8 @@ export default {
         '10px': '10px'
       },
       fontSize: {
-        '-2': 'clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem)',
-        '-1': 'clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem)',
+        xxs: 'clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem)',
+        xs: 'clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem)',
         0: 'clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem)',
         1: 'clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem)',
         2: 'clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem)',
@@ -33,7 +33,7 @@ export default {
         4: 'clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem)',
         5: 'clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem)'
       }
-    },
-    plugins: []
-  }
+    }
+  },
+  plugins: [require('tailwindcss-animated')]
 }
