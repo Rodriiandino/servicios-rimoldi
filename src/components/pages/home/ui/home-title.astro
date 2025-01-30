@@ -23,10 +23,16 @@ const { title, description, link, linkText } = Astro.props
   <div>
     <a
       href={link}
-      class='text-second-color hover:underline flex items-center gap-2'
+      class='text-second-color hover:underline flex items-center gap-2 focus:outline-offset-4 focus:outline-2 group'
+      aria-label={linkText}
     >
       {linkText}
-      <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        fill='none'
+        class='transition-transform group-hover:translate-x-1'
         ><path
           stroke='#F1961C'
           stroke-linecap='round'

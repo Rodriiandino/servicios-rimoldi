@@ -1,6 +1,7 @@
 ---
 import HomeSection from './ui/home-section.astro'
 import HomeTitle from './ui/home-title.astro'
+import MachineCard from '@components/ui/machine-card.astro'
 ---
 
 <HomeSection>
@@ -10,4 +11,36 @@ import HomeTitle from './ui/home-title.astro'
     link='/maquinas'
     linkText='Ver todas las Máquinas'
   />
+  <div
+    class='flex gap-4 flex-row md:gap-6 justify-center md:justify-between py-3 flex-wrap'
+  >
+    <MachineCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Excavadora'
+      title='Excavadora'
+      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
+      link='/maquinas/excavadora'
+    />
+    <MachineCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Excavadora'
+      title='Excavadora'
+      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
+      link='/maquinas/excavadora'
+    />
+    <MachineCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Excavadora'
+      title='Excavadora'
+      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
+      link='/maquinas/excavadora'
+    />
+    <MachineCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Excavadora'
+      title='Excavadora'
+      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
+      link='/maquinas/excavadora'
+    />
+  </div>
 </HomeSection>

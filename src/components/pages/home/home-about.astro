@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<section class='about'>
+  <div
+    class='max-w-max-width h-full px-side mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-end'
+  >
+    <div class='w-full lg:w-1/2 px-4 lg:px-0 self-end'>
+      <Image
+        src='/images/about-person.webp'
+        alt='Logo de Servicios Rimoldi'
+        width='595'
+        height='507'
+        class='about__mask'
+      />
+    </div>
+    <div class='w-full lg:w-1/2 flex flex-col gap-4 self-start py-16'>
+      <h3 class='text-main-color text-2xl lg:text-3xl font-semibold'>
+        Quienes Somos?
+      </h3>
+      <p class='text-sm lg:text-base text-main-color'>
+        En Servicios Rimoldi, somos una empresa familiar ubicada en el tranquilo
+        pueblo de Quillinzo, en la provincia de Córdoba. Nos especializamos en
+        movimiento de suelos, excavaciones, zanjeo y limpieza de terrenos,
+        ofreciendo soluciones confiables y personalizadas para tus proyectos.
+      </p>
+      <p class='text-sm lg:text-base text-main-color'>
+        Nuestra historia comenzó en Rosario, donde Elio padre fundó la empresa
+        con dedicación y esfuerzo. Buscando una vida más tranquila, decidió
+        mudarse junto a su familia a Quillinzo, donde no solo encontró un hogar,
+        sino también un lugar ideal para seguir trabajando en lo que ama.
+      </p>
+      <p class='text-sm lg:text-base text-main-color'>
+        Con el tiempo, Elio padre compartió su conocimiento y pasión con su
+        hijo, también llamado Elio, quien hoy trabaja a su lado. Juntos,
+        combinamos experiencia, valores familiares y un compromiso
+        inquebrantable con la calidad para brindar el mejor servicio a nuestros
+        clientes.
+      </p>
+      <p class='text-sm lg:text-base text-main-color'>
+        Elegirnos significa apoyar a una empresa local que valora el trabajo en
+        equipo, la cercanía con la comunidad y la excelencia en cada proyecto.
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .about {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-image: url('/images/about.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-top: 5rem;
+      height: auto;
+    }
+
+    .about__mask {
+      mask-image: linear-gradient(to bottom, #050505 85%, transparent 100%);
+    }
+
+    @media (min-width: 1024px) {
+      .about {
+        height: 630px;
+        padding: 0;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .about {
+        background-attachment: fixed;
+      }
+    }
+  </style>
+</section>

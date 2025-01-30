@@ -1,31 +1,143 @@
 ---
+import Facebook from '@components/icons/contact/facebook.astro'
+import Instagram from '@components/icons/contact/instagram.astro'
+import Whatsapp from '@components/icons/contact/whatsapp.astro'
 import Logo from '@components/icons/logo.astro'
 ---
 
-<footer class='w-full pt-10 flex flex-col justify-between gap-14'>
-  <div>
-    <span>
-      <Logo />
-    </span>
-    <span>
-      <h4>Explora</h4>
-      <nav>
-        <a href=''>Inicio</a>
-        <a href=''>Obras</a>
-        <a href=''>Servicios</a>
-      </nav>
-    </span>
-    <span>
-      <h4>Compañía</h4>
-      <nav>
-        <a href=''>Maquinarias</a>
-        <a href=''>Nosotros</a>
-        <a href=''>Contacto</a>
-      </nav>
-    </span>
-  </div>
-  <div>
-    <span></span>
-    <span></span>
+<footer>
+  <div
+    class='max-w-max-width px-side pt-10 flex flex-col justify-between gap-14 mx-auto'
+  >
+    <div class='flex justify-between gap-10 flex-col md:flex-row'>
+      <div class='flex items-center'>
+        <Logo />
+      </div>
+      <div class='flex flex-col gap-3'>
+        <h4 class='font-noto text-xxs text-fourth-color'>Explora</h4>
+        <nav aria-label='Explora - Navegación principal'>
+          <ul class='flex flex-col gap-2 list-none p-0'>
+            <li>
+              <a
+                href='/'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/' ? 'page' : undefined}
+              >
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a
+                href='/proyectos'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/proyectos'
+                  ? 'page'
+                  : undefined}
+              >
+                Obras
+              </a>
+            </li>
+            <li>
+              <a
+                href='/servicios'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/servicios'
+                  ? 'page'
+                  : undefined}
+              >
+                Servicios
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class='flex flex-col gap-3'>
+        <h4 class='font-noto text-xxs text-fourth-color'>Compañía</h4>
+        <nav aria-label='Enlaces de la compañía'>
+          <ul class='flex flex-col gap-2 list-none p-0'>
+            <li>
+              <a
+                href='/maquinarias'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/maquinarias'
+                  ? 'page'
+                  : undefined}
+              >
+                Maquinarias
+              </a>
+            </li>
+            <li>
+              <a
+                href='/sobre-nosotros'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/sobre-nosotros'
+                  ? 'page'
+                  : undefined}
+              >
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a
+                href='/contacto'
+                class='text-sm hover:underline focus:outline-offset-4 focus:outline-2'
+                aria-current={Astro.url.pathname === '/contacto'
+                  ? 'page'
+                  : undefined}
+              >
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div
+      class='border-t border-fourth-color/20 flex justify-between gap-2 items-center py-7'
+    >
+      <div class='text-xxs text-fourth-color'><p>@ Servicios Rimoldi</p></div>
+      <div>
+        <nav aria-label='Redes sociales'>
+          <ul class='flex gap-4 list-none p-0'>
+            <li>
+              <a
+                href='#'
+                target='_blank'
+                rel='noopener noreferrer'
+                class='focus:outline-offset-4 focus:outline-2'
+                aria-label='Síguenos en Facebook'
+              >
+                <Facebook />
+                <span class='sr-only'>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href='#'
+                target='_blank'
+                rel='noopener noreferrer'
+                class='focus:outline-offset-4 focus:outline-2'
+                aria-label='Síguenos en Instagram'
+              >
+                <Instagram />
+                <span class='sr-only'>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href='#'
+                target='_blank'
+                rel='noopener noreferrer'
+                class='focus:outline-offset-4 focus:outline-2'
+                aria-label='Contáctanos por WhatsApp'
+              >
+                <Whatsapp />
+                <span class='sr-only'>WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </footer>

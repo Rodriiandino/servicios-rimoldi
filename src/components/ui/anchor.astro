@@ -5,13 +5,17 @@ interface Props {
   ariaLabel: string
 }
 
+const { pathname } = Astro.url
 const { href, alternative, ariaLabel } = Astro.props
 ---
 
 <a
   href={href}
-  class={alternative ? 'anchor anchor__alternative' : 'anchor anchor__primary'}
+  class={alternative
+    ? 'anchor anchor__alternative focus:outline-offset-4 focus:outline-2'
+    : 'anchor anchor__primary focus:outline-offset-4 focus:outline-2'}
   aria-label={ariaLabel || 'Ir a otra página del sitio'}
+  aria-current={pathname === href ? 'page' : undefined}
 >
   <slot />
 </a>

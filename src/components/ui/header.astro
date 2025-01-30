@@ -49,8 +49,9 @@ const contact = {
 >
   <nav
     class='w-full max-w-max-width h-full flex items-center justify-between px-side'
+    aria-label='Navegación principal'
   >
-    <a href='/'>
+    <a href='/' aria-label='Servicios Rimoldi - Ir al inicio'>
       <Logo />
     </a>
     <ul class='flex items-center gap-x-5'>
@@ -60,12 +61,13 @@ const contact = {
             <a
               href={href}
               class:list={[
-                current && 'current',
+                current && 'text-second-color',
                 'text-xs',
                 text === 'Contacto' && 'nav__contact',
-                'hover:text-second-color transition-colors'
+                'hover:text-second-color transition-colors focus:outline-offset-4 focus:outline-2'
               ]}
               aria-label={ariaLabel}
+              aria-current={current ? 'page' : undefined}
             >
               {text}
             </a>
@@ -84,9 +86,3 @@ const contact = {
     </ul>
   </nav>
 </header>
-
-<style>
-  .current {
-    color: var(--second-color);
-  }
-</style>

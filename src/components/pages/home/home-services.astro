@@ -1,6 +1,7 @@
 ---
 import HomeTitle from './ui/home-title.astro'
 import HomeSection from './ui/home-section.astro'
+import ServiceCard from '@components/ui/service-card.astro'
 ---
 
 <HomeSection>
@@ -10,4 +11,50 @@ import HomeSection from './ui/home-section.astro'
     link='/servicios'
     linkText='Ver todos los Servicios'
   />
+  <div
+    class='flex gap-4 flex-row md:gap-6 justify-center md:justify-between py-3 flex-wrap'
+  >
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Construcción de edificios'
+      title='Construcción de edificios'
+      description='Construcción de edificios residenciales, comerciales e industriales.'
+      link='/servicios/construccion-de-edificios'
+    />
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Remodelaciones'
+      title='Remodelaciones'
+      description='Remodelaciones de espacios interiores y exteriores.'
+      link='/servicios/remodelaciones'
+    />
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Diseño de interiores'
+      title='Diseño de interiores'
+      description='Diseño de interiores para espacios residenciales y comerciales.'
+      link='/servicios/diseno-de-interiores'
+    />
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Construcción de edificios'
+      title='Construcción de edificios'
+      description='Construcción de edificios residenciales, comerciales e industriales.'
+      link='/servicios/construccion-de-edificios'
+    />
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Remodelaciones'
+      title='Remodelaciones'
+      description='Remodelaciones de espacios interiores y exteriores.'
+      link='/servicios/remodelaciones'
+    />
+    <ServiceCard
+      img='https://placehold.co/270x270/png'
+      imgAlt='Diseño de interiores'
+      title='Diseño de interiores'
+      description='Diseño de interiores para espacios residenciales y comerciales.'
+      link='/servicios/diseno-de-interiores'
+    />
+  </div>
 </HomeSection>
