@@ -3,10 +3,11 @@ interface Props {
   href: string
   alternative?: boolean
   ariaLabel: string
+  external?: boolean
 }
 
 const { pathname } = Astro.url
-const { href, alternative, ariaLabel } = Astro.props
+const { href, alternative, ariaLabel, external } = Astro.props
 ---
 
 <a
@@ -16,6 +17,8 @@ const { href, alternative, ariaLabel } = Astro.props
     : 'anchor anchor__primary focus:outline-offset-4 focus:outline-2'}
   aria-label={ariaLabel || 'Ir a otra página del sitio'}
   aria-current={pathname === href ? 'page' : undefined}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
 >
   <slot />
 </a>

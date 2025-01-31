@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string
+  description: string
+  description2?: string
+}
+
+const { title, description, description2 } = Astro.props
+---
+
+<div class='contact__info'>
+  <span class='contact__icon'>
+    <slot name='icon' />
+  </span>
+  <div class='contact__content'>
+    <p><strong>{title}</strong></p>
+    <p>{description}</p>
+    <p style="display: {description2 ? 'block' : 'none'}">{description2}</p>
+  </div>
+</div>
+
+<style>
+  .contact__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact__icon {
+    display: flex;
+    color: var(--third-color);
+  }
+
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__content p strong {
+    font-size: var(--step--1);
+  }
+
+  .contact__content p {
+    font-size: var(--step--1);
+  }
+</style>

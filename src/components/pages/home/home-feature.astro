@@ -1,0 +1,58 @@
+---
+import Clock from '@components/icons/feature/clock.astro'
+import Pen from '@components/icons/feature/pen.astro'
+import People from '@components/icons/feature/people.astro'
+import Shield from '@components/icons/feature/shield.astro'
+import HomeSection from './ui/home-section.astro'
+---
+
+<HomeSection>
+  <div
+    class='flex items-center justify-center gap-16 flex-wrap flex-col md:flex-row'
+  >
+    <div
+      class='h-[145px] flex flex-col items-center justify-between hover:scale-105 transition-transform'
+    >
+      <Shield />
+      <h3 class='font-noto text-1 font-semibold whitespace-nowrap text-center'>
+        Experiencia Comprobada
+      </h3>
+      <p class='text-center whitespace-nowrap text-xs'>
+        Más de +40 años en el mercado
+      </p>
+    </div>
+    <div
+      class='h-[145px] flex flex-col items-center justify-between hover:scale-105'
+    >
+      <Clock />
+      <h3 class='font-noto text-1 font-semibold whitespace-nowrap text-center'>
+        Eficiencia
+      </h3>
+      <p class='text-center whitespace-nowrap text-xs'>
+        Cumplimiento de plazos garantizado
+      </p>
+    </div>
+    <div
+      class='h-[145px] flex flex-col items-center justify-between hover:scale-105'
+    >
+      <Pen />
+      <h3 class='font-noto text-1 font-semibold whitespace-nowrap text-center'>
+        Equipamiento Moderno
+      </h3>
+      <p class='text-center whitespace-nowrap text-xs'>
+        Maquinaria de última generación
+      </p>
+    </div>
+    <div
+      class='h-[145px] flex flex-col items-center justify-between hover:scale-105'
+    >
+      <People />
+      <h3 class='font-noto text-1 font-semibold whitespace-nowrap text-center'>
+        Equipo Profesional
+      </h3>
+      <p class='text-center whitespace-nowrap text-xs'>
+        Personal altamente capacitado
+      </p>
+    </div>
+  </div>
+</HomeSection>

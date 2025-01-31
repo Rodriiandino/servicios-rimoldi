@@ -1,0 +1,120 @@
+---
+import Facebook from '@components/icons/contact/facebook.astro'
+import Instagram from '@components/icons/contact/instagram.astro'
+import Whatsapp from '@components/icons/contact/whatsapp.astro'
+import Phone from '@components/icons/contact/phone.astro'
+import Mail from '@components/icons/contact/mail.astro'
+import Location from '@components/icons/contact/location.astro'
+import Anchor from './anchor.astro'
+import ContactInfo from './contact-info.astro'
+---
+
+<div class='w-full flex flex-col gap-7 md:flex-row md:gap-10 py-8'>
+  <div class='flex flex-col gap-7 md:w-1/2'>
+    x
+    <div class='flex flex-col gap-5'>
+      <h3 class='font-noto text-1 font-bold'>Información de contacto</h3>
+      <ContactInfo title='Teléfono' description='+1234567890 '>
+        <Phone slot='icon' />
+      </ContactInfo>
+      <ContactInfo title='Email' description='Dirección'>
+        <Mail slot='icon' />
+      </ContactInfo>
+      <ContactInfo
+        title='Locación'
+        description='Dirección'
+        description2='Ciudad, Provincia'
+      >
+        <Location slot='icon' />
+      </ContactInfo>
+    </div>
+    <div class='flex flex-col gap-5'>
+      <h3 class='font-noto text-1 font-bold'>Síguenos en redes sociales</h3>
+      <nav aria-label='Síguenos en redes sociales'>
+        <ul class='flex gap-4 list-none p-0'>
+          <li>
+            <a
+              href='#'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='focus:outline-offset-4 focus:outline-2'
+              aria-label='Síguenos en Facebook'
+            >
+              <Facebook />
+              <span class='sr-only'>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href='#'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='focus:outline-offset-4 focus:outline-2'
+              aria-label='Síguenos en Instagram'
+            >
+              <Instagram />
+              <span class='sr-only'>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <Anchor
+        href='https://wa.me/5493512345678'
+        ariaLabel='Contactar por Whatsapp'
+        external
+      >
+        <Whatsapp /> Contáctanos por WhatsApp
+        <span class='sr-only'>Whatsapp</span>
+      </Anchor>
+    </div>
+  </div>
+  <form class='w-full md:w-1/2 flex flex-col gap-4'>
+    <label for='name' class='text-third-color font-noto text-xs'>Nombre</label>
+    <input
+      type='text'
+      placeholder='Tu Nombre'
+      id='name'
+      name='name'
+      required
+      class='font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color'
+    />
+    <label for='email' class='text-third-color font-noto text-sm'>Email</label>
+    <input
+      type='email'
+      placeholder='Tu Email'
+      id='email'
+      name='email'
+      required
+      class='font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color'
+    />
+    <label for='message' class='text-third-color font-noto text-sm'
+      >Mensaje</label
+    >
+    <textarea
+      id='message'
+      placeholder='Tu Mensaje'
+      name='message'
+      required
+      class='h-full font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color resize-none'
+    ></textarea>
+
+    <button
+      type='submit'
+      class='bg-second-color rounded-10px text-xs text-main-color font-noto p-2 font-semibold py-2 px-4 hover:brightness-75 transition-all'
+    >
+      Envíanos tu Mensaje
+    </button>
+    <!-- <div
+      class='cf-turnstile'
+      data-sitekey={siteKey}
+      data-langues='es'
+      data-theme='light'
+      data-size='flexible'
+    > -->
+    <p id='response' class='text-xs text-third-color hidden'>
+      Los Datos han sido enviados correctamente.
+    </p>
+  </form>
+</div>

@@ -1,4 +1,5 @@
 ---
+import ProjectCard from '@components/ui/project-card.astro'
 import HomeSection from './ui/home-section.astro'
 import HomeTitle from './ui/home-title.astro'
 ---
@@ -10,4 +11,45 @@ import HomeTitle from './ui/home-title.astro'
     link='/proyectos'
     linkText='Ver todas las Obras'
   />
+  <div class='grid md:grid-cols-2 gap-4 py-3'>
+    <div class='grid gap-4'>
+      <ProjectCard
+        img='https://placehold.co/666x400/png'
+        imgAlt='Proyecto 1'
+        title='Proyecto 1'
+        description='Descripción del Proyecto 1'
+        link='/proyectos/proyecto-1'
+      />
+      <ProjectCard
+        img='https://placehold.co/666x400/png'
+        imgAlt='Proyecto 1'
+        title='Proyecto 1'
+        description='Descripción del Proyecto 1'
+        link='/proyectos/proyecto-1'
+      />
+      <ProjectCard
+        img='https://placehold.co/666x230/png'
+        imgAlt='Proyecto 1'
+        title='Proyecto 1'
+        description='Descripción del Proyecto 1'
+        link='/proyectos/proyecto-1'
+      />
+    </div>
+    <div class='grid gap-4'>
+      <ProjectCard
+        img='https://placehold.co/570x678/png'
+        imgAlt='Proyecto 1'
+        title='Proyecto 1'
+        description='Descripción del Proyecto 1'
+        link='/proyectos/proyecto-1'
+      />
+      <ProjectCard
+        img='https://placehold.co/570x377/png'
+        imgAlt='Proyecto 1'
+        title='Proyecto 1'
+        description='Descripción del Proyecto 1'
+        link='/proyectos/proyecto-1'
+      />
+    </div>
+  </div>
 </HomeSection>
