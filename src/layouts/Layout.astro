@@ -14,7 +14,60 @@ interface Props {
 const { title, description, canonical, image } = Astro.props
 ---
 
-<!doctype html>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const animations = [
+      {
+        selector: '.fade-in',
+        animationClass: 'fade-in-active',
+        threshold: 0.1
+      }
+    ]
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+
+    function initializeAnimations() {
+      animations.forEach(animationConfig => {
+        const { selector, animationClass, threshold } = animationConfig
+
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const element = entry.target as HTMLElement
+                const baseDelay = 70
+
+                const delay = element.dataset.index
+                  ? Number(element.dataset.index) * baseDelay
+                  : 0
+
+                setTimeout(
+                  () => {
+                    element.classList.add(animationClass)
+                  },
+                  isMobile ? 0 : delay
+                )
+
+                observer.unobserve(element)
+              }
+            })
+          },
+          {
+            threshold,
+            rootMargin: '0px 0px 100px 0px'
+          }
+        )
+
+        document.querySelectorAll(selector).forEach(element => {
+          observer.observe(element)
+        })
+      })
+    }
+
+    initializeAnimations()
+  })
+</script>
+
 <html lang='en'>
   <head>
     <ClientRouter />
@@ -36,6 +89,7 @@ const { title, description, canonical, image } = Astro.props
         --second-color: #f1961c;
         --third-color: #f8fbfa;
         --fourth-color: #777777;
+        --fifth-color: #0a0a0a;
         --background-color: #050505;
 
         --max-width: calc(1250px + 4rem);
@@ -135,6 +189,21 @@ const { title, description, canonical, image } = Astro.props
 
       ::-webkit-search-cancel-button {
         -webkit-appearance: none;
+      }
+
+      .fade-in {
+        content-visibility: auto;
+        opacity: 0;
+        transform: translateY(60px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+        will-change: opacity, transform;
+      }
+
+      .fade-in.fade-in-active {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </body>

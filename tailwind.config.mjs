@@ -12,6 +12,7 @@ export default {
         'second-color': '#f1961c',
         'third-color': '#f8fbfa',
         'fourth-color': '#777777',
+        'fifth-color': '#0a0a0a',
         'background-color': '#050505'
       },
       maxWidth: {

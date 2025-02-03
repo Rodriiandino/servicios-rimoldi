@@ -1,0 +1,24 @@
+---
+import ChevronDown from '@components/icons/chevron-down.astro'
+
+interface Props {
+  title: string
+  subtitle: string
+}
+
+const { title, subtitle } = Astro.props
+---
+
+<header class='max-w-max-width px-side mx-auto flex flex-col items-center'>
+  <h2
+    class='text-2 sm:text-3 tracking-wide text-center animate-fade-down animate-once animate-ease-in-out'
+  >
+    {title}
+  </h2>
+  <p
+    class='max-w-[75ch] text-xs animate-fade animate-once animate-delay-200 animate-ease-in-out text-center'
+  >
+    {subtitle}
+  </p>
+  <ChevronDown />
+</header>

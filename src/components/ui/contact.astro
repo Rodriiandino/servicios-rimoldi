@@ -7,11 +7,21 @@ import Mail from '@components/icons/contact/mail.astro'
 import Location from '@components/icons/contact/location.astro'
 import Anchor from './anchor.astro'
 import ContactInfo from './contact-info.astro'
+
+interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
 ---
 
-<div class='w-full flex flex-col gap-7 md:flex-row md:gap-10 py-8'>
+<div
+  class:list={[
+    'w-full flex flex-col gap-7 md:flex-row md:gap-10 py-8',
+    className
+  ]}
+>
   <div class='flex flex-col gap-7 md:w-1/2'>
-    x
     <div class='flex flex-col gap-5'>
       <h3 class='font-noto text-1 font-bold'>Información de contacto</h3>
       <ContactInfo title='Teléfono' description='+1234567890 '>

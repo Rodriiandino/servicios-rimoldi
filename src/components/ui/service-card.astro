@@ -7,14 +7,15 @@ interface Props {
   title: string
   description: string
   link: string
+  index: number
 }
 
-const { img, imgAlt, title, description, link } = Astro.props
+const { img, imgAlt, title, description, link, index } = Astro.props
 ---
 
 <article
-  class='flex flex-col gap-3 w-[270px] h-auto min-h-[414px] max-[350px]:w-[230px] max-[350px]:min-h-[380px]'
-  style='content-visibility: auto;'
+  class='fade-in flex flex-col gap-3 w-[270px] h-auto min-h-[414px] max-[350px]:w-[230px] max-[350px]:min-h-[380px]'
+  data-index={index}
 >
   <picture
     class='w-[270px] h-[270px] max-[350px]:w-[230px] max-[350px]:h-[230px] overflow-hidden rounded-md'
