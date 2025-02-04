@@ -1,0 +1,78 @@
+---
+import Layout from '@layouts/Layout.astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import services from 'src/data/services.json'
+import PagesHeader from '@components/ui/pages-header.astro'
+import { Image } from 'astro:assets'
+import Anchor from '@components/ui/anchor.astro'
+import ArrowRight from '@components/icons/arrow-right.astro'
+import Phone from '@components/icons/phone.astro'
+const { title } = Astro.params
+
+const service = (() => {
+  return services.find(service => convertTitleToURL(service.title) === title)
+})()
+---
+
+<Layout
+  title={`Servicio ${service?.title} | Servicios Rimoldi`}
+  description={`Conoce más sobre el servicio de ${service?.title} en Calamuchita. Soluciones profesionales con tecnología avanzada para tus proyectos.`}
+>
+  <main class='py-6'>
+    <PagesHeader
+      title={service?.title ?? 'Servicio no encontrado'}
+      subtitle={service?.descriptionCard ?? ''}
+    />
+    <section class='max-w-max-width mx-auto px-side py-6 flex flex-col gap-6'>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+        <picture>
+          <Image
+            src={'https://placehold.co/800x600/png?text=Imagen+no+disponible'}
+            alt={service?.images[0].alt ?? 'Imagen no disponible'}
+            class='w-full h-full object-cover rounded-lg'
+            width={500}
+            height={300}
+          />
+        </picture>
+        <div class='flex flex-col gap-4'>
+          <p>{service?.paragraphs[0]}</p>
+          <p>{service?.paragraphs[1]}</p>
+          <p>{service?.paragraphs[2]}</p>
+        </div>
+      </div>
+      <picture>
+        <Image
+          src={'https://placehold.co/1250x300/png?text=Imagen+no+disponible'}
+          alt={service?.images[1].alt ?? 'Imagen no disponible'}
+          class='w-full h-full object-cover rounded-lg'
+          width={1250}
+          height={270}
+        />
+      </picture>
+      <div
+        class='min-h-[20rem] flex flex-col justify-center items-center gap-4'
+      >
+        <h3
+          class='font-noto text-2 font-bold text-center opacity-0'
+          id='fade-in-down'
+        >
+          ¿Listo para impulsar tu próximo proyecto?
+        </h3>
+        <nav
+          class='flex gap-3 sm:gap-6 flex-col sm:flex-row'
+          aria-label='Contacto'
+        >
+          <Anchor href='/contacto' ariaLabel='Solicitar Cotización'
+            >Solicitar Cotización <ArrowRight /></Anchor
+          >
+          <Anchor
+            href='https://wa.me/5493512345678'
+            ariaLabel='Contactar por WhatsApp'
+            alternative
+            external>Contáctanos <Phone /></Anchor
+          >
+        </nav>
+      </div>
+    </section>
+  </main>
+</Layout>

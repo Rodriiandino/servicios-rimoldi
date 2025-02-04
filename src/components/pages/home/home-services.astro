@@ -2,6 +2,18 @@
 import HomeTitle from './ui/home-title.astro'
 import HomeSection from './ui/home-section.astro'
 import ServiceCard from '@components/ui/service-card.astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import services from 'src/data/services.json'
+
+const servicesList = services
+  .map((service, index) => {
+    const { title, descriptionCard, images } = service
+    const img = `https://placehold.co/270x270/png?text=${convertTitleToURL(title)}`
+    const link = `/servicio/${convertTitleToURL(title)}`
+    const imgAlt = images[0].alt
+    return { img, imgAlt, title, descriptionCard, link, index }
+  })
+  .slice(0, 6)
 ---
 
 <HomeSection>
@@ -12,55 +24,19 @@ import ServiceCard from '@components/ui/service-card.astro'
     linkText='Ver todos los Servicios'
   />
   <div
-    class='flex gap-4 flex-row md:gap-6 justify-center md:justify-between py-3 flex-wrap'
+    class='flex gap-4 flex-row md:gap-6 justify-center md:justify-around py-3 flex-wrap'
   >
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Construcción de edificios'
-      title='Construcción de edificios'
-      description='Construcción de edificios residenciales, comerciales e industriales.'
-      link='/servicios/construccion-de-edificios'
-      index={0}
-    />
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Remodelaciones'
-      title='Remodelaciones'
-      description='Remodelaciones de espacios interiores y exteriores.'
-      link='/servicios/remodelaciones'
-      index={1}
-    />
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Diseño de interiores'
-      title='Diseño de interiores'
-      description='Diseño de interiores para espacios residenciales y comerciales.'
-      link='/servicios/diseno-de-interiores'
-      index={2}
-    />
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Construcción de edificios'
-      title='Construcción de edificios'
-      description='Construcción de edificios residenciales, comerciales e industriales.'
-      link='/servicios/construccion-de-edificios'
-      index={3}
-    />
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Remodelaciones'
-      title='Remodelaciones'
-      description='Remodelaciones de espacios interiores y exteriores.'
-      link='/servicios/remodelaciones'
-      index={4}
-    />
-    <ServiceCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Diseño de interiores'
-      title='Diseño de interiores'
-      description='Diseño de interiores para espacios residenciales y comerciales.'
-      link='/servicios/diseno-de-interiores'
-      index={5}
-    />
+    {
+      servicesList.map(service => (
+        <ServiceCard
+          title={service.title}
+          description={service.descriptionCard}
+          img={service.img}
+          imgAlt={service.imgAlt}
+          link={service.link}
+          index={service.index}
+        />
+      ))
+    }
   </div>
 </HomeSection>

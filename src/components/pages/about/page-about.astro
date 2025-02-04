@@ -58,7 +58,10 @@ import { Image } from 'astro:assets'
   <div
     class='max-w-max-width px-side mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20'
   >
-    <div class='w-full flex flex-col gap-1 rounded-10px bg-second-color p-8'>
+    <div
+      class='w-full flex flex-col gap-1 rounded-10px bg-second-color p-8 opacity-0'
+      id='fade-in-right'
+    >
       <h4
         class='font-noto font-bold text-1 text-main-color flex gap-2 items-center'
       >
@@ -71,7 +74,10 @@ import { Image } from 'astro:assets'
         infraestructuras sólidas y duraderas.
       </p>
     </div>
-    <div class='w-full flex flex-col gap-1 rounded-10px bg-third-color p-8'>
+    <div
+      class='w-full flex flex-col gap-1 rounded-10px bg-third-color p-8 opacity-0'
+      id='fade-in-left'
+    >
       <h4
         class='font-noto font-bold text-1 text-second-color flex gap-2 items-center'
       >
@@ -99,10 +105,13 @@ import { Image } from 'astro:assets'
   <div
     class='max-w-max-width px-side mx-auto flex flex-col justify-center items-center gap-4'
   >
-    <h3 class='font-noto text-2 md:text-3 font-bold text-center'>
+    <h3
+      class='font-noto text-2 md:text-3 font-bold text-center opacity-0'
+      id='fade-in-down'
+    >
       ¿Necesitas una cotización para tu proyecto?
     </h3>
-    <p class='text-center text-xs'>
+    <p class='text-center text-xs opacity-0' id='fade-in'>
       Contáctanos hoy mismo y obtén una cotización personalizada para tu
       proyecto de movimiento de suelos.
     </p>

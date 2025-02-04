@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from 'astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import services from 'src/data/services.json'
+import PageService from '@components/pages/service-page/page-service.astro'
+
+export const getStaticPaths = (() => {
+  const paths: { params: { title: string } }[] = []
+
+  services.map(project => {
+    paths.push({
+      params: {
+        title: convertTitleToURL(project.title)
+      }
+    })
+  })
+
+  return paths
+}) satisfies GetStaticPaths
+---
+
+<PageService />

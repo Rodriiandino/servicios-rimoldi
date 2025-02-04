@@ -1,0 +1,192 @@
+[
+  {
+    "title": "Movimiento de Suelos",
+    "descriptionCard": "Nivelación de terrenos, plateas y calles, optimizando espacios para construcción.",
+    "paragraphs": [
+      "El movimiento de suelos es esencial para preparar terrenos antes de iniciar cualquier proyecto de construcción. Nuestro equipo utiliza maquinaria moderna para garantizar una nivelación precisa y eficiente.",
+      "Ofrecemos servicios de nivelación de terrenos, plateas y calles, asegurando que el espacio esté listo para cumplir con los más altos estándares de construcción.",
+      "Contamos con experiencia en proyectos de diferentes escalas, desde pequeñas obras hasta grandes desarrollos urbanísticos."
+    ],
+    "images": [
+      {
+        "url": "/images/movimiento-suelos-1.jpg",
+        "alt": "Maquinaria realizando nivelación de terreno"
+      },
+      {
+        "url": "/images/movimiento-suelos-2.jpg",
+        "alt": "Terreno nivelado listo para construcción"
+      }
+    ]
+  },
+  {
+    "title": "Compactaciones",
+    "descriptionCard": "Uso de rolos compactadores para garantizar la estabilidad del terreno.",
+    "paragraphs": [
+      "La compactación es crucial para asegurar la estabilidad del terreno antes de iniciar cualquier construcción. Utilizamos rolos compactadores especializados para lograr una base sólida.",
+      "Nuestros equipos están diseñados para trabajar en diferentes tipos de suelo, garantizando resultados óptimos en cada proyecto.",
+      "Ya sea para construcciones residenciales, comerciales o industriales, nuestras compactaciones cumplen con los más altos estándares de calidad."
+    ],
+    "images": [
+      {
+        "url": "/images/compactaciones-1.jpg",
+        "alt": "Rolos compactadores en acción"
+      },
+      {
+        "url": "/images/compactaciones-2.jpg",
+        "alt": "Terreno compactado listo para construcción"
+      }
+    ]
+  },
+  {
+    "title": "Desmontes y Extracciones",
+    "descriptionCard": "Eliminación de árboles, raíces y vegetación no deseada.",
+    "paragraphs": [
+      "Realizamos desmontes completos, extrayendo árboles desde la raíz y eliminando toda la vegetación no deseada del terreno.",
+      "Nuestro equipo cuenta con la experiencia y herramientas necesarias para llevar a cabo desmontes seguros y eficientes.",
+      "Este servicio es ideal para preparar terrenos destinados a construcción o para limpiar áreas afectadas por vegetación excesiva."
+    ],
+    "images": [
+      {
+        "url": "/images/desmontes-1.jpg",
+        "alt": "Equipo realizando desmonte de árboles"
+      },
+      {
+        "url": "/images/desmontes-2.jpg",
+        "alt": "Terreno libre de vegetación después de desmonte"
+      }
+    ]
+  },
+  {
+    "title": "Excavaciones",
+    "descriptionCard": "Excavación de cimientos, sangrías, piletas y zanjeos para instalaciones.",
+    "paragraphs": [
+      "Ofrecemos servicios de excavación para cimientos, sangrías, piletas y zanjeos destinados a instalaciones cloacales, de agua o eléctricas.",
+      "Utilizamos maquinaria especializada para garantizar precisión y seguridad en cada proyecto de excavación.",
+      "Nuestro equipo trabaja en coordinación con ingenieros y arquitectos para cumplir con las especificaciones técnicas requeridas."
+    ],
+    "images": [
+      {
+        "url": "/images/excavaciones-1.jpg",
+        "alt": "Excavadora trabajando en cimientos"
+      },
+      {
+        "url": "/images/excavaciones-2.jpg",
+        "alt": "Zanja para instalación de tuberías"
+      }
+    ]
+  },
+  {
+    "title": "Limpieza y Desmalezado",
+    "descriptionCard": "Corte de pasto, limpieza de terrenos y eliminación de maleza.",
+    "paragraphs": [
+      "Mantenemos tus terrenos en óptimas condiciones mediante servicios de corte de pasto, limpieza general y eliminación de maleza.",
+      "Nuestro equipo utiliza herramientas profesionales para garantizar un acabado impecable y duradero.",
+      "Ideal para propietarios que buscan mantener sus terrenos libres de vegetación no deseada y listos para futuros proyectos."
+    ],
+    "images": [
+      {
+        "url": "/images/limpieza-1.jpg",
+        "alt": "Equipo cortando pasto en terreno amplio"
+      },
+      {
+        "url": "/images/limpieza-2.jpg",
+        "alt": "Terreno limpio y libre de maleza"
+      }
+    ]
+  },
+  {
+    "title": "Montajes Industriales",
+    "descriptionCard": "Construcción de galpones, estructuras pesadas y movimiento de contenedores.",
+    "paragraphs": [
+      "Especializados en montajes industriales, ofrecemos servicios de construcción de galpones, estructuras pesadas y manejo de contenedores.",
+      "Contamos con equipos robustos y personal capacitado para ejecutar proyectos industriales de gran envergadura.",
+      "Nuestros servicios son ideales para empresas que requieren soluciones rápidas y confiables en el ámbito industrial."
+    ],
+    "images": [
+      {
+        "url": "/images/montajes-1.jpg",
+        "alt": "Galpón industrial en construcción"
+      },
+      {
+        "url": "/images/montajes-2.jpg",
+        "alt": "Equipo moviendo contenedores en obra"
+      }
+    ]
+  },
+  {
+    "title": "Pilotajes",
+    "descriptionCard": "Perforaciones profundas y colocación de postes para proyectos estructurales.",
+    "paragraphs": [
+      "Realizamos perforaciones profundas y colocación de postes para proyectos estructurales, cercos y otras aplicaciones.",
+      "Nuestro equipo utiliza tecnología avanzada para garantizar precisión y durabilidad en cada pilotaje.",
+      "Este servicio es clave para proyectos que requieren una base sólida y resistente ante condiciones adversas."
+    ],
+    "images": [
+      {
+        "url": "/images/pilotajes-1.jpg",
+        "alt": "Equipo realizando perforación profunda"
+      },
+      {
+        "url": "/images/pilotajes-2.jpg",
+        "alt": "Postes colocados en terreno"
+      }
+    ]
+  },
+  {
+    "title": "Apertura de Calles",
+    "descriptionCard": "Preparación, nivelación y limpieza para habilitación de caminos.",
+    "paragraphs": [
+      "Preparamos, nivelamos y limpiamos terrenos para habilitar caminos en áreas complejas o de difícil acceso.",
+      "Nuestro servicio de apertura de calles es ideal para proyectos urbanísticos, agrícolas o industriales.",
+      "Garantizamos caminos seguros y accesibles que facilitan el transporte y la movilidad en cualquier terreno."
+    ],
+    "images": [
+      {
+        "url": "/images/apertura-calles-1.jpg",
+        "alt": "Maquinaria abriendo camino en terreno rural"
+      },
+      {
+        "url": "/images/apertura-calles-2.jpg",
+        "alt": "Camino nivelado y listo para uso"
+      }
+    ]
+  },
+  {
+    "title": "Transporte y Auxilios",
+    "descriptionCard": "Traslado de vehículos pesados o livianos con camión auxilio equipado.",
+    "paragraphs": [
+      "Ofrecemos servicios de transporte y auxilio con camión equipado con rampa hidráulica para trasladar vehículos pesados o livianos.",
+      "Nuestro equipo está disponible las 24 horas para brindar asistencia rápida y confiable en situaciones de emergencia.",
+      "Ideal para empresas de logística, constructoras y particulares que requieren soluciones de transporte especializado."
+    ],
+    "images": [
+      {
+        "url": "/images/transporte-1.jpg",
+        "alt": "Camión auxilio con rampa hidráulica"
+      },
+      {
+        "url": "/images/transporte-2.jpg",
+        "alt": "Vehículo pesado siendo trasladado"
+      }
+    ]
+  },
+  {
+    "title": "Trabajos Especializados",
+    "descriptionCard": "Uso de barredoras, martillos neumáticos, zanjadoras y más.",
+    "paragraphs": [
+      "Disponemos de herramientas especializadas como barredoras, martillos neumáticos y zanjadoras para atender necesidades específicas.",
+      "Nuestro equipo está capacitado para realizar trabajos técnicos y detallados que requieren precisión y experiencia.",
+      "Este servicio es ideal para proyectos que demandan soluciones personalizadas y equipos especializados."
+    ],
+    "images": [
+      {
+        "url": "/images/trabajos-especializados-1.jpg",
+        "alt": "Martillo neumático en uso"
+      },
+      {
+        "url": "/images/trabajos-especializados-2.jpg",
+        "alt": "Barredora limpiando área industrial"
+      }
+    ]
+  }
+]

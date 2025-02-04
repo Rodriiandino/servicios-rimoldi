@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Retroexcavadora JCB 3CX",
+    "descriptionCard": "Ideal para excavaciones , sangrías, piletas, zanjeos y extracción de árboles.",
+    "images": [
+      {
+        "url": "/images/retroexcavadora-1.jpg",
+        "alt": "Retroexcavadora JCB 3CX trabajando en excavación"
+      }
+    ]
+  },
+  {
+    "title": "Mini Cargadora JCB 1110T",
+    "descriptionCard": "Perfecta para nivelaciones y limpieza de terrenos con acceso limitado.",
+    "images": [
+      {
+        "url": "/images/mini-cargadora-1.jpg",
+        "alt": "Mini cargadora trabajando en terreno estrecho"
+      }
+    ]
+  },
+  {
+    "title": "Camión Auxilio Pesado con Rampa Hidráulica",
+    "descriptionCard": "Transporte seguro y eficiente de vehículos pesados con rampa hidráulica para mayor comodidad.",
+    "images": [
+      {
+        "url": "/images/camion-auxilio-1.jpg",
+        "alt": "Camión auxilio con rampa hidráulica"
+      }
+    ]
+  },
+  {
+    "title": "Grúa de 6 Toneladas",
+    "descriptionCard": "Ideal para mover contenedores, estructuras, postes y podar árboles con seguridad.",
+    "images": [
+      {
+        "url": "/images/grua-triciclo-1.jpg",
+        "alt": "Grúa triciclo moviendo contenedor"
+      }
+    ]
+  },
+  {
+    "title": "Moto Compresor",
+    "descriptionCard": "Imprescindible para arenados y herramientas neumáticas.",
+    "images": [
+      {
+        "url": "/images/moto-compresor-1.jpg",
+        "alt": "Moto compresor en uso para herramientas neumáticas"
+      }
+    ]
+  },
+  {
+    "title": "Rolo Compactador",
+    "descriptionCard": "Compactación para garantizar terrenos firmes y estables en proyectos de construcción.",
+    "images": [
+      {
+        "url": "/images/rolo-compactador-1.jpg",
+        "alt": "Rolo compactador trabajando en terreno"
+      }
+    ]
+  },
+  {
+    "title": "Hoyadora de Gran Porte",
+    "descriptionCard": "Herramienta para perforaciones profundas y colocación de postes en proyectos estructurales.",
+    "images": [
+      {
+        "url": "/images/hoyadora-1.jpg",
+        "alt": "Hoyadora realizando perforación profunda"
+      }
+    ]
+  },
+  {
+    "title": "Desmalezadora",
+    "descriptionCard": "Esencial para limpieza y mantenimiento de terrenos, eliminando maleza y vegetación.",
+    "images": [
+      {
+        "url": "/images/desmalezadora-1.jpg",
+        "alt": "Desmalezadora cortando maleza en terreno"
+      }
+    ]
+  },
+  {
+    "title": "Cortadora de Pasto",
+    "descriptionCard": "Ideal para cortes finos en trabajos de desmalezado y mantenimiento de áreas verdes.",
+    "images": [
+      {
+        "url": "/images/cortadora-pasto-1.jpg",
+        "alt": "Cortadora de pasto en uso"
+      }
+    ]
+  },
+  {
+    "title": "Barredora",
+    "descriptionCard": "Garantiza una limpieza rápida y eficiente en todo tipo de áreas.",
+    "images": [
+      {
+        "url": "/images/barredora-1.jpg",
+        "alt": "Barredora limpiando área industrial"
+      }
+    ]
+  },
+  {
+    "title": "Martillo Neumático",
+    "descriptionCard": "Diseñado para romper rocas, concreto y otros materiales duros con máxima eficiencia y precisión.",
+    "images": [
+      {
+        "url": "/images/martillo-neumatico-1.jpg",
+        "alt": "Martillo neumático rompiendo concreto"
+      }
+    ]
+  },
+  {
+    "title": "Zanjadora",
+    "descriptionCard": "Perfecta para realizar zanjeos en terrenos para instalaciones de agua, electricidad o drenaje.",
+    "images": [
+      {
+        "url": "/images/zanjadora-1.jpg",
+        "alt": "Zanjadora abriendo zanja en terreno"
+      }
+    ]
+  },
+  {
+    "title": "Pilotera",
+    "descriptionCard": "Herramienta para proyectos que requieren perforaciones profundas y precisas.",
+    "images": [
+      {
+        "url": "/images/pilotera-1.jpg",
+        "alt": "Pilotera realizando perforación profunda"
+      }
+    ]
+  }
+]

@@ -14,8 +14,9 @@ const { img, imgAlt, title, description, link, index } = Astro.props
 ---
 
 <article
-  class='fade-in flex flex-col gap-3 w-[270px] h-auto min-h-[414px] max-[350px]:w-[230px] max-[350px]:min-h-[380px]'
+  class='flex flex-col gap-3 w-[270px] h-auto min-h-[414px] max-[350px]:w-[230px] max-[350px]:min-h-[380px] opacity-0'
   data-index={index}
+  id='fade-in-up'
 >
   <picture
     class='w-[270px] h-[270px] max-[350px]:w-[230px] max-[350px]:h-[230px] overflow-hidden rounded-md'
@@ -34,9 +35,10 @@ const { img, imgAlt, title, description, link, index } = Astro.props
         class='text-[1.4rem] font-noto text-third-color font-medium tracking-tight max-[350px]:text-[1.2rem]'
       >
         {title}
+        <span class='sr-only'>servicio</span>
       </h3>
     </header>
-    <p class='text-xs line-clamp-2'>
+    <p class='text-xs line-clamp-3'>
       {description}
     </p>
     <footer>

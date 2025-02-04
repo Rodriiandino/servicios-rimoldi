@@ -2,49 +2,39 @@
 import HomeSection from './ui/home-section.astro'
 import HomeTitle from './ui/home-title.astro'
 import MachineCard from '@components/ui/machine-card.astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import machines from 'src/data/machines.json'
+
+const machinesList = machines
+  .map((machine, index) => {
+    const { title, descriptionCard, images } = machine
+    const img = `https://placehold.co/290x290/png?text=${convertTitleToURL(title)}`
+    const imgAlt = images[0].alt
+    return { img, imgAlt, title, descriptionCard, index }
+  })
+  .slice(0, 4)
 ---
 
 <HomeSection>
   <HomeTitle
     title='Maquinarias'
     description='Equipamiento de vanguardia para resultados excepcionales'
-    link='/maquinas'
+    link='/maquinarias'
     linkText='Ver todas las Máquinas'
   />
   <div
     class='flex gap-4 flex-row md:gap-6 justify-center md:justify-between py-3 flex-wrap'
   >
-    <MachineCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Excavadora'
-      title='Excavadora'
-      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
-      link='/maquinas/excavadora'
-      index={0}
-    />
-    <MachineCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Excavadora'
-      title='Excavadora'
-      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
-      link='/maquinas/excavadora'
-      index={1}
-    />
-    <MachineCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Excavadora'
-      title='Excavadora'
-      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
-      link='/maquinas/excavadora'
-      index={2}
-    />
-    <MachineCard
-      img='https://placehold.co/270x270/png'
-      imgAlt='Excavadora'
-      title='Excavadora'
-      description='Excavadora de orugas para trabajos de excavación y movimiento de tierras.'
-      link='/maquinas/excavadora'
-      index={3}
-    />
+    {
+      machinesList.map(machine => (
+        <MachineCard
+          title={machine.title}
+          description={machine.descriptionCard}
+          img={machine.img}
+          imgAlt={machine.imgAlt}
+          index={machine.index}
+        />
+      ))
+    }
   </div>
 </HomeSection>

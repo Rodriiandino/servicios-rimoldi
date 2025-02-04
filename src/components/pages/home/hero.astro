@@ -1,5 +1,6 @@
 ---
-import ArrowRight from '@components/icons/home/arrow-right.astro'
+import ArrowRight from '@components/icons/arrow-right.astro'
+import Phone from '@components/icons/phone.astro'
 import Anchor from '@components/ui/anchor.astro'
 
 const descriptions = [
@@ -49,7 +50,8 @@ const descriptions = [
     </div>
 
     <nav
-      class='max-w-max-width px-side flex items-center justify-center gap-x-6'
+      class='max-w-max-width px-side flex items-center justify-center gap-3 sm:gap-6 flex-col sm:flex-row'
+      aria-label='Contacto'
     >
       <Anchor href='/servicios' ariaLabel='Ir a la página de servicios'>
         Nuestros Servicios <ArrowRight />
@@ -60,7 +62,7 @@ const descriptions = [
         alternative
         ariaLabel='Ir a la página de contacto'
       >
-        Solicitar Cotización
+        Solicitar Cotización <Phone />
       </Anchor>
     </nav>
   </div>
@@ -99,8 +101,8 @@ const descriptions = [
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .fade-in,
-    .fade-out {
+    .fade-in-text,
+    .fade-out-text {
       animation: none;
       opacity: 1;
     }
@@ -124,11 +126,11 @@ const descriptions = [
     }
   }
 
-  .fade-in {
+  .fade-in-text {
     animation: fadeIn 0.5s ease-in forwards;
   }
 
-  .fade-out {
+  .fade-out-text {
     animation: fadeOut 0.5s ease-out forwards;
   }
 </style>
@@ -168,7 +170,7 @@ const descriptions = [
       if (this.paragraph) {
         this.paragraph.textContent = this.descriptions[0]
         if (!this.prefersReducedMotion) {
-          this.paragraph.classList.add('fade-in')
+          this.paragraph.classList.add('fade-in-text')
           this.startAnimation()
         }
       }
@@ -179,16 +181,16 @@ const descriptions = [
       this.isAnimating = true
 
       if (!this.paragraph) return
-      this.paragraph.classList.remove('fade-in')
-      this.paragraph.classList.add('fade-out')
+      this.paragraph.classList.remove('fade-in-text')
+      this.paragraph.classList.add('fade-out-text')
 
       await new Promise(resolve => setTimeout(resolve, 500))
 
       this.currentIndex = (this.currentIndex + 1) % this.descriptions.length
       this.paragraph.textContent = this.descriptions[this.currentIndex]
 
-      this.paragraph.classList.remove('fade-out')
-      this.paragraph.classList.add('fade-in')
+      this.paragraph.classList.remove('fade-out-text')
+      this.paragraph.classList.add('fade-in-text')
 
       this.isAnimating = false
     }

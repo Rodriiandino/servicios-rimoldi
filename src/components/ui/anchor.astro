@@ -59,17 +59,22 @@ const { href, alternative, ariaLabel, external } = Astro.props
     border: 1px solid var(--third-color);
     transition:
       color 0.3s ease,
-      background-color 0.3s ease;
+      background-color 0.3s ease,
+      stroke 0.3s ease;
+
+    stroke: var(--third-color);
   }
 
   .anchor__alternative:hover {
     background-color: var(--third-color);
     color: var(--background-color);
+    stroke: var(--background-color);
   }
 
   .anchor__alternative:focus {
     background-color: var(--third-color);
     color: var(--background-color);
+    stroke: var(--background-color);
   }
 
   .anchor__alternative:active {
