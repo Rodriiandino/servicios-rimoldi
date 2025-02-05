@@ -1,18 +1,20 @@
 ---
 import MachineCard from '@components/ui/machine-card.astro'
 import PagesHeader from '@components/ui/pages-header.astro'
-import convertTitleToURL from 'src/utils/convert_title_to_url'
 import machines from 'src/data/machines.json'
+import { generateList } from 'src/utils/generate-list'
+import type { MachineCard as MachineCardType } from 'src/types/cards'
 
-const list = machines.map((machine, index) => {
-  const { title, descriptionCard, images } = machine
-  const img = `https://placehold.co/290x290/png?text=${convertTitleToURL(title)}`
-  const imgAlt = images[0].alt
-  return { img, imgAlt, title, descriptionCard, index }
+const machinesList = generateList<MachineCardType>(machines, {
+  imageSize: '290x290',
+  sliceStart: 0,
+  sliceEnd: 7
 })
-
-const machinesList = list.slice(0, 7)
-const implementsList = list.slice(7, list.length)
+const implementsList = generateList<MachineCardType>(machines, {
+  imageSize: '290x290',
+  sliceStart: 7,
+  sliceEnd: 13
+})
 ---
 
 <PagesHeader

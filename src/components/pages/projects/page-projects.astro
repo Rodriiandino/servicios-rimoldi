@@ -1,58 +1,65 @@
 ---
-import ChevronDown from '@components/icons/chevron-down.astro'
 import PageProjectCard from './page-project-card.astro'
+import projects from 'src/data/projects.json'
+import { generateList } from 'src/utils/generate-list'
+import type { ProjectCard } from 'src/types/cards'
+import PagesHeader from '@components/ui/pages-header.astro'
+
+const projectList = generateList<ProjectCard>(projects, {
+  imageSize: '400x240',
+  linkPrefix: '/proyecto/'
+})
 ---
 
-<header class='project__header'>
-  <div class='max-w-max-width px-side mx-auto flex flex-col items-center'>
-    <h2
-      class='text-2 sm:text-3 tracking-wide text-center animate-fade-down animate-once animate-ease-in-out'
-    >
-      Nuestras Obras
-    </h2>
-    <p
-      class='max-w-[75ch] text-xs animate-fade animate-once animate-delay-200 animate-ease-in-out text-center'
-    >
-      Más de 40 años transformando terrenos y construyendo confianza
-    </p>
-    <ChevronDown />
-  </div>
-</header>
+<PagesHeader
+  title='Nuestras Obras'
+  subtitle='Más de 40 años transformando terrenos y construyendo confianza'
+/>
 <section
   class='w-full max-w-max-width px-side mx-auto flex flex-row gap-6 justify-center sm:justify-between items-center flex-wrap py-8'
 >
   <div class='w-[135px] flex flex-col justify-center items-center'>
-    <h3 class='font-noto font-bold text-1 sm:text-2'>150+</h3>
+    <span class='font-noto font-bold text-1 sm:text-2 text-second-color'
+      >150+</span
+    >
     <p class='text-xxs text-center'>Obras completadas</p>
   </div>
   <div class='w-[135px] flex flex-col justify-center items-center'>
-    <h3 class='font-noto font-bold text-1 sm:text-2'>50000+</h3>
+    <span class='font-noto font-bold text-1 sm:text-2 text-second-color'
+      >50000+</span
+    >
     <p class='text-xxs text-center'>M³ Excavados</p>
   </div>
   <div class='w-[135px] flex flex-col justify-center items-center'>
-    <h3 class='font-noto font-bold text-1 sm:text-2'>200+</h3>
+    <span class='font-noto font-bold text-1 sm:text-2 text-second-color'
+      >200+</span
+    >
     <p class='text-xxs text-center'>Clientes Satisfechos</p>
   </div>
   <div class='w-[135px] flex flex-col justify-center items-center'>
-    <h3 class='font-noto font-bold text-1 sm:text-2'>40+</h3>
+    <span class='font-noto font-bold text-1 sm:text-2 text-second-color'
+      >40+</span
+    >
     <p class='text-xxs text-center'>Años de Experiencia</p>
   </div>
 </section>
 <section
   class='w-full max-w-max-width px-side mx-auto flex flex-wrap gap-4 justify-center py-8'
 >
-  <PageProjectCard
-    img='https://placehold.co/400x240/png'
-    imgAlt='Excavación en terreno'
-    title='Excavación en terreno'
-    description='Excavación de terreno para construcción de vivienda unifamiliar en Quillinzo, Córdoba.'
-    link='/proyectos/excavacion-en-terreno'
-    width={400}
-    height={260}
-    location='Quillinzo, Córdoba'
-    startDate='Enero 2021'
-    endDate='Febrero 2021'
-    category='Excavación'
-    index={0}
-  />
+  {
+    projectList.map(project => (
+      <PageProjectCard
+        title={project.title}
+        description={project.descriptionCard}
+        img={project.img}
+        imgAlt={project.imgAlt}
+        link={project.link}
+        category={project.category}
+        location={project.location}
+        startDate={project.startDate}
+        endDate={project.endDate}
+        index={project.index}
+      />
+    ))
+  }
 </section>

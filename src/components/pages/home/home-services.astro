@@ -2,18 +2,16 @@
 import HomeTitle from './ui/home-title.astro'
 import HomeSection from './ui/home-section.astro'
 import ServiceCard from '@components/ui/service-card.astro'
-import convertTitleToURL from 'src/utils/convert_title_to_url'
 import services from 'src/data/services.json'
+import { generateList } from 'src/utils/generate-list'
+import type { ServiceCard as ServiceCardType } from 'src/types/cards'
 
-const servicesList = services
-  .map((service, index) => {
-    const { title, descriptionCard, images } = service
-    const img = `https://placehold.co/270x270/png?text=${convertTitleToURL(title)}`
-    const link = `/servicio/${convertTitleToURL(title)}`
-    const imgAlt = images[0].alt
-    return { img, imgAlt, title, descriptionCard, link, index }
-  })
-  .slice(0, 6)
+const servicesList = generateList<ServiceCardType>(services, {
+  imageSize: '270x270',
+  linkPrefix: '/servicio/',
+  sliceStart: 0,
+  sliceEnd: 6
+})
 ---
 
 <HomeSection>

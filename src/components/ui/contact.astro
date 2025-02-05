@@ -42,7 +42,7 @@ const { className } = Astro.props
       <h3 class='font-noto text-1 font-bold'>Síguenos en redes sociales</h3>
       <nav aria-label='Síguenos en redes sociales'>
         <ul class='flex gap-4 list-none p-0'>
-          <li>
+          <li class='hover:scale-110 transform transition-transform'>
             <a
               href='#'
               target='_blank'
@@ -54,7 +54,7 @@ const { className } = Astro.props
               <span class='sr-only'>Facebook</span>
             </a>
           </li>
-          <li>
+          <li class='hover:scale-110 transform transition-transform'>
             <a
               href='#'
               target='_blank'
@@ -88,7 +88,7 @@ const { className } = Astro.props
       id='name'
       name='name'
       required
-      class='font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color'
+      class='font-noto text-xs text-main-color border border-main-color rounded-10px p-2'
     />
     <label for='email' class='text-third-color font-noto text-sm'>Email</label>
     <input
@@ -97,7 +97,7 @@ const { className } = Astro.props
       id='email'
       name='email'
       required
-      class='font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color'
+      class='font-noto text-xs text-main-color border-main-color rounded-10px p-2'
     />
     <label for='message' class='text-third-color font-noto text-sm'
       >Mensaje</label
@@ -107,12 +107,12 @@ const { className } = Astro.props
       placeholder='Tu Mensaje'
       name='message'
       required
-      class='h-full font-noto text-xs text-third-color border border-main-color rounded-10px p-2 bg-fourth-color resize-none'
+      class='h-full font-noto text-xs text-main-color border-main-color rounded-10px p-2 resize-none min-h-40'
     ></textarea>
 
     <button
       type='submit'
-      class='bg-second-color rounded-10px text-xs text-main-color font-noto p-2 font-semibold py-2 px-4 hover:brightness-75 transition-all'
+      class='bg-second-color rounded-10px text-xs text-main-color font-noto p-2 font-semibold py-2 px-4 hover:brightness-[0.8] active:brightness-[0.6] transition-all focus:outline-offset-4 focus:outline-2 focus:brightness-110'
     >
       Envíanos tu Mensaje
     </button>

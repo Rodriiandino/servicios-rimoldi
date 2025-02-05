@@ -2,17 +2,15 @@
 import HomeSection from './ui/home-section.astro'
 import HomeTitle from './ui/home-title.astro'
 import MachineCard from '@components/ui/machine-card.astro'
-import convertTitleToURL from 'src/utils/convert_title_to_url'
 import machines from 'src/data/machines.json'
+import { generateList } from 'src/utils/generate-list'
+import type { MachineCard as MachineCardType } from 'src/types/cards'
 
-const machinesList = machines
-  .map((machine, index) => {
-    const { title, descriptionCard, images } = machine
-    const img = `https://placehold.co/290x290/png?text=${convertTitleToURL(title)}`
-    const imgAlt = images[0].alt
-    return { img, imgAlt, title, descriptionCard, index }
-  })
-  .slice(0, 4)
+const machinesList = generateList<MachineCardType>(machines, {
+  imageSize: '290x290',
+  sliceStart: 0,
+  sliceEnd: 4
+})
 ---
 
 <HomeSection>

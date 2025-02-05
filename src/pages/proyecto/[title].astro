@@ -1,9 +1,22 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import type { GetStaticPaths } from 'astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import projects from 'src/data/projects.json'
+import PageProject from '@components/pages/project/page-project.astro'
+
+export const getStaticPaths = (() => {
+  const paths: { params: { title: string } }[] = []
+
+  projects.map(project => {
+    paths.push({
+      params: {
+        title: convertTitleToURL(project.title)
+      }
+    })
+  })
+
+  return paths
+}) satisfies GetStaticPaths
 ---
 
-<Layout title='Home' description="Eliot Rimoldi's personal website">
-  <main>
-    <h1>Eliot Rimoldi</h1>
-  </main>
-</Layout>
+<PageProject />

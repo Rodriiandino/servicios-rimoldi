@@ -1,0 +1,159 @@
+---
+import Layout from '@layouts/Layout.astro'
+import convertTitleToURL from 'src/utils/convert_title_to_url'
+import projects from 'src/data/projects.json'
+import Location from '@components/icons/project/location.astro'
+import Calender from '@components/icons/project/calender.astro'
+import Category from '@components/icons/project/category.astro'
+import Anchor from '@components/ui/anchor.astro'
+import ArrowRight from '@components/icons/arrow-right.astro'
+import Phone from '@components/icons/phone.astro'
+import { Image } from 'astro:assets'
+import PagesHeader from '@components/ui/pages-header.astro'
+const { title } = Astro.params
+
+const project = (() => {
+  return projects.find(project => convertTitleToURL(project.title) === title)
+})()
+---
+
+<Layout
+  title={`Proyecto ${project?.title} | Servicios Rimoldi`}
+  description={`Conoce más sobre el proyecto ${project?.title} de Servicios Rimoldi | Calamuchita`}
+>
+  <main>
+    <PagesHeader
+      title={project?.title ?? 'Proyecto no encontrado'}
+      subtitle={project?.descriptionCard ?? 'Proyecto no encontrado'}
+      transitionTitle={`project.title-${project?.title}`}
+      transitionSubtitle={`project.subtitle-${project?.title}`}
+    >
+      <div
+        class='flex gap-4 mt-4 flex-wrap justify-center items-center z-10 opacity-0'
+        id='fade-in'
+      >
+        <span
+          class='flex items-center gap-1'
+          transition:name={`project.location-${project?.title}`}
+        >
+          <Location />
+          <p class='text-xxs sm:text-xs'>
+            {project?.location ?? 'Ubicación no encontrada'}
+          </p>
+        </span>
+        <span
+          class='flex items-center gap-1'
+          transition:name={`project.date-${project?.title}`}
+        >
+          <Calender />
+          <p class='text-xxs sm:text-xs'>
+            {project?.endDate ?? 'Fecha no encontrada'}
+          </p>
+        </span>
+        <span
+          class='flex items-center gap-1'
+          transition:name={`project.category-${project?.title}`}
+        >
+          <Category />
+          <p class='text-xxs sm:text-xs'>
+            {project?.category ?? 'Categoría no encontrada'}
+          </p>
+        </span>
+      </div>
+    </PagesHeader>
+
+    <section class='max-w-max-width mx-auto px-side py-6 flex flex-col'>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+        <picture class='opacity-0' id='fade-in-right'>
+          <Image
+            src={'https://placehold.co/625x500/png?text=Imagen+no+disponible'}
+            alt={project?.images[0].alt ?? 'Imagen no disponible'}
+            class='w-full h-full object-cover rounded-10px'
+            width={625}
+            height={500}
+          />
+        </picture>
+        <div class='flex flex-col gap-4 opacity-0' id='fade-in-left'>
+          <h2 class='font-noto font-bold text-2 text-third-color'>
+            Descripción del Proyecto
+          </h2>
+          <p>{project?.paragraphs[0]}</p>
+          <p>{project?.paragraphs[1]}</p>
+          <div
+            class='relative flex flex-col gap-1 bg-third-color rounded-10px p-4'
+          >
+            <h3 class='font-noto font-bold text-0 text-main-color'>
+              Testimonio del cliente
+            </h3>
+            <blockquote class='text-xxs flex flex-col gap-1'>
+              <p class='text-main-color text-xs'>
+                "{project?.testimony.text}"
+              </p>
+              <cite>{project?.testimony.author}</cite>
+            </blockquote>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              fill='none'
+              class='absolute bottom-2 right-2'
+              ><path
+                stroke='#F1961C'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                d='M16 3c-.5304 0-1.0391.21071-1.4142.58579C14.2107 3.96086 14 4.46957 14 5v6c0 .5304.2107 1.0391.5858 1.4142S15.4696 13 16 13c.2652 0 .5196.1054.7071.2929S17 13.7348 17 14v1c0 .5304-.2107 1.0391-.5858 1.4142S15.5304 17 15 17c-.2652 0-.5196.1054-.7071.2929S14 17.7348 14 18v2c0 .2652.1054.5196.2929.7071S14.7348 21 15 21c1.5913 0 3.1174-.6321 4.2426-1.7574C20.3679 18.1174 21 16.5913 21 15V5c0-.53043-.2107-1.03914-.5858-1.41421C20.0391 3.21071 19.5304 3 19 3h-3ZM5 3c-.53043 0-1.03914.21071-1.41421.58579C3.21071 3.96086 3 4.46957 3 5v6c0 .5304.21071 1.0391.58579 1.4142C3.96086 12.7893 4.46957 13 5 13c.26522 0 .51957.1054.70711.2929C5.89464 13.4804 6 13.7348 6 14v1c0 .5304-.21071 1.0391-.58579 1.4142C5.03914 16.7893 4.53043 17 4 17c-.26522 0-.51957.1054-.70711.2929C3.10536 17.4804 3 17.7348 3 18v2c0 .2652.10536.5196.29289.7071C3.48043 20.8946 3.73478 21 4 21c1.5913 0 3.11742-.6321 4.24264-1.7574C9.36786 18.1174 10 16.5913 10 15V5c0-.53043-.21071-1.03914-.58579-1.41421C9.03914 3.21071 8.53043 3 8 3H5Z'
+              ></path></svg
+            >
+          </div>
+        </div>
+      </div>
+      <div class='flex flex-col gap-4 mt-12'>
+        <h2 class='font-noto font-bold text-2 text-center'>Galería</h2>
+        <div class='flex gap-4 flex-wrap justify-center md:justify-between'>
+          {
+            project?.images
+              .map((image, index) => (
+                <Image
+                  src={
+                    'https://placehold.co/290x290/png?text=Imagen+no+disponible'
+                  }
+                  alt={'Imagen no disponible'}
+                  width={290}
+                  height={290}
+                  class={'rounded-10px opacity-0'}
+                  id={'fade-in-up'}
+                  data-index={index}
+                />
+              ))
+              .slice(1)
+          }
+        </div>
+      </div>
+      <div
+        class='min-h-[20rem] flex flex-col justify-center items-center gap-4'
+      >
+        <h3
+          class='font-noto text-2 font-bold text-center opacity-0'
+          id='fade-in-down'
+        >
+          ¿Listo para impulsar tu próximo proyecto?
+        </h3>
+        <nav
+          class='flex gap-3 sm:gap-6 flex-col sm:flex-row'
+          aria-label='Contacto'
+        >
+          <Anchor href='/contacto' ariaLabel='Solicitar Cotización'
+            >Solicitar Cotización <ArrowRight /></Anchor
+          >
+          <Anchor
+            href='https://wa.me/5493512345678'
+            ariaLabel='Contactar por WhatsApp'
+            alternative
+            external>Contáctanos <Phone /></Anchor
+          >
+        </nav>
+      </div>
+    </section>
+  </main>
+</Layout>

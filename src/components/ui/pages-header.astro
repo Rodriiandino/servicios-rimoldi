@@ -4,21 +4,52 @@ import ChevronDown from '@components/icons/chevron-down.astro'
 interface Props {
   title: string
   subtitle: string
+  transitionTitle?: string
+  transitionSubtitle?: string
 }
 
-const { title, subtitle } = Astro.props
+const { title, subtitle, transitionTitle, transitionSubtitle } = Astro.props
 ---
 
-<header class='max-w-max-width px-side mx-auto flex flex-col items-center'>
-  <h2
-    class='text-2 sm:text-3 tracking-wide text-center animate-fade-down animate-once animate-ease-in-out'
-  >
-    {title}
-  </h2>
-  <p
-    class='max-w-[75ch] text-xs animate-fade animate-once animate-delay-200 animate-ease-in-out text-center'
-  >
-    {subtitle}
-  </p>
-  <ChevronDown />
+<header class='pages__header'>
+  <div class='max-w-max-width px-side mx-auto flex flex-col items-center'>
+    <h1
+      class='text-2 sm:text-3 tracking-wide text-center animate-fade-down animate-once animate-ease-in-out'
+      transition:name={transitionTitle}
+    >
+      {title}
+    </h1>
+    <p
+      class='max-w-[75ch] text-xs animate-fade animate-once animate-delay-200 animate-ease-in-out text-center'
+      transition:name={transitionSubtitle}
+    >
+      {subtitle}
+    </p>
+    <slot />
+    <ChevronDown />
+  </div>
 </header>
+
+<style>
+  .pages__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+
+  .pages__header {
+    position: relative;
+    width: 100%;
+    background-image: url('/images/hero-pages-header.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    padding: 2rem 0;
+  }
+</style>

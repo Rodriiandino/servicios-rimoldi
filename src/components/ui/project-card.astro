@@ -36,12 +36,16 @@ const { img, imgAlt, title, description, link, width, height, index } =
         href={link}
         class='hover:underline text-[1.4rem] font-noto text-second-color font-medium tracking-tight max-[350px]:text-[1.2rem]'
         aria-label={`Más información sobre ${title}`}
+        transition:name={`project.title-${title}`}
       >
         {title}
         <span class='sr-only'>proyecto</span>
       </a>
     </h3>
-    <p class='text-xs line-clamp-3'>
+    <p
+      class='text-xs line-clamp-3'
+      transition:name={`project.description-${title}`}
+    >
       {description}
     </p>
     <footer>

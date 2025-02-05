@@ -10,8 +10,6 @@ interface Props {
   title: string
   description: string
   link: string
-  width: number
-  height: number
   location: string
   startDate: string
   endDate: string
@@ -46,24 +44,41 @@ const {
     </div>
   </picture>
   <div class='p-6'>
-    <h3 class='font-noto font-bold text-1 mb-2'>
+    <h3
+      class='font-noto font-bold text-1 mb-2'
+      transition:name={`project.title-${title}`}
+    >
       {title}
     </h3>
     <div class='flex flex-col gap-2 text-xs mb-6'>
-      <div class='flex items-center gap-2 text-xxs sm:text-xs'>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.location-${title}`}
+      >
         <Location />
         <p>{location}</p>
       </div>
-      <div class='flex items-center gap-2 text-xxs sm:text-xs'>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.date-${title}`}
+      >
         <Calender />
         <p>{startDate} - {endDate}</p>
       </div>
-      <div class='flex items-center gap-2 text-xxs sm:text-xs'>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.category-${title}`}
+      >
         <Category />
         <p>{category}</p>
       </div>
     </div>
-    <p class='text-xs mb-6'>{description}</p>
+    <p
+      class='text-xs mb-6 line-clamp-2'
+      transition:name={`project.description-${title}`}
+    >
+      {description}
+    </p>
     <footer>
       <a
         href={link}

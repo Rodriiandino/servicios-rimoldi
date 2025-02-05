@@ -7,10 +7,10 @@ import PageService from '@components/pages/service-page/page-service.astro'
 export const getStaticPaths = (() => {
   const paths: { params: { title: string } }[] = []
 
-  services.map(project => {
+  services.map(service => {
     paths.push({
       params: {
-        title: convertTitleToURL(project.title)
+        title: convertTitleToURL(service.title)
       }
     })
   })

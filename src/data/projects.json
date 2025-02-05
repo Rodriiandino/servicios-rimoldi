@@ -1,0 +1,192 @@
+[
+  {
+    "title": "Excavación en terreno",
+    "descriptionCard": "Excavación de terreno para construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+    "paragraphs": [
+      "Excavación de terreno para construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+      "Se realizó la excavación de 100 m2 de terreno para la construcción de una vivienda unifamiliar en Quillinzo, Córdoba. Se retiraron 50 m3 de tierra y se niveló el terreno para la construcción de la vivienda."
+    ],
+    "startDate": "2021-09-01",
+    "endDate": "2021-09-15",
+    "category": "Construcción",
+    "location": "Quillinzo, Córdoba",
+    "testimony": {
+      "author": "Juan Pérez",
+      "text": "Excelente trabajo de nivelación de terreno. Muy profesionales y eficientes."
+    },
+    "images": [
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "title": "Construcción de vivienda unifamiliar",
+    "descriptionCard": "Construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+    "paragraphs": [
+      "Construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+      "Se construyó una vivienda unifamiliar de 100 m2 en Quillinzo, Córdoba. La vivienda cuenta con 2 dormitorios, 1 baño, cocina, comedor y living. Se utilizó ladrillo visto y techo de chapa."
+    ],
+    "startDate": "2021-09-16",
+    "endDate": "2022-01-15",
+    "category": "Construcción",
+    "location": "Quillinzo, Córdoba",
+    "testimony": {
+      "author": "María Gómez",
+      "text": "Estoy muy contenta con mi nueva casa. La construcción es de excelente calidad y el equipo de trabajo es muy profesional."
+    },
+    "images": [
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "title": "Construcción de piscina",
+    "descriptionCard": "Construcción de piscina en Quillinzo, Córdoba.",
+    "paragraphs": [
+      "Construcción de piscina en Quillinzo, Córdoba.",
+      "Se construyó una piscina de 8x4 m en Quillinzo, Córdoba. La piscina cuenta con un sistema de filtrado y limpieza automático. Se utilizó revestimiento de venecitas y borde atérmico."
+    ],
+    "startDate": "2022-01-16",
+    "endDate": "2022-02-15",
+    "category": "Construcción",
+    "location": "Quillinzo, Córdoba",
+    "testimony": {
+      "author": "Carlos Rodríguez",
+      "text": "La piscina quedó espectacular. Muy buen trabajo y excelente atención."
+    },
+    "images": [
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "title": "Construcción de quincho",
+    "descriptionCard": "Construcción de quincho en Quillinzo, Córdoba.",
+    "paragraphs": [
+      "Construcción de quincho en Quillinzo, Córdoba.",
+      "Se construyó un quincho de 30 m2 en Quillinzo, Córdoba. El quincho cuenta con parrilla, mesada, bacha y baño. Se utilizó ladrillo visto y techo de chapa."
+    ],
+    "startDate": "2022-02-16",
+    "endDate": "2022-03-15",
+    "category": "Construcción",
+    "location": "Quillinzo, Córdoba",
+    "testimony": {
+      "author": "Ana Martínez",
+      "text": "El quincho quedó hermoso. Muy buena calidad de construcción y excelente atención."
+    },
+    "images": [
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "title": "Construcción de galpón",
+    "descriptionCard": "Construcción de galpón en Quillinzo, Córdoba.",
+    "paragraphs": [
+      "Construcción de galpón en Quillinzo, Córdoba.",
+      "Se construyó un galpón de 100 m2 en Quillinzo, Córdoba. El galpón cuenta con portón corredizo y techo de chapa. Se utilizó ladrillo visto y techo de chapa."
+    ],
+    "startDate": "2022-03-16",
+    "endDate": "2022-04-15",
+    "category": "Construcción",
+    "location": "Quillinzo, Córdoba",
+    "testimony": {
+      "author": "Pedro López",
+      "text": "Muy buen trabajo de construcción de galpón. Muy profesionales y eficientes."
+    },
+    "images": [
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      },
+      {
+        "url": "",
+        "alt": ""
+      }
+    ]
+  }
+]
