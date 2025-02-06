@@ -12,7 +12,9 @@ const { title, subtitle, transitionTitle, transitionSubtitle } = Astro.props
 ---
 
 <header class='pages__header'>
-  <div class='max-w-max-width px-side mx-auto flex flex-col items-center'>
+  <div
+    class='max-w-max-width px-side-sm sm:px-side mx-auto flex flex-col items-center'
+  >
     <h1
       class='text-2 sm:text-3 tracking-wide text-center animate-fade-down animate-once animate-ease-in-out'
       transition:name={transitionTitle}

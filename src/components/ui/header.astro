@@ -45,17 +45,18 @@ const contact = {
 ---
 
 <header
-  class='relative w-full h-[90px] bg-background-color flex items-center justify-center'
+  class='sticky top-0 right-0 w-full h-[75px] bg-background-color flex items-center justify-center z-10 transition-transform duration-300'
+  id='header'
 >
   <nav
-    class='w-full max-w-max-width h-full flex items-center justify-between px-side'
+    class='w-full max-w-max-width h-full flex items-center justify-between px-side-sm sm:px-side bg-background-color z-20'
     aria-label='Navegación principal'
   >
-    <a href='/' aria-label='Servicios Rimoldi - Ir al inicio' class='z-30'>
+    <a href='/' aria-label='Servicios Rimoldi - Ir al inicio' class='z-20'>
       <Logo />
     </a>
-    <div class='flex items-center gap-2 id="mobile-menu-2"'>
-      <ul class='flex items-center gap-x-5'>
+    <div class='flex items-center gap-2'>
+      <ul class='flex items-center min-[840px]:gap-x-5'>
         {
           nav.map(({ href, text, current, ariaLabel }) => (
             <li>
@@ -75,7 +76,7 @@ const contact = {
             </li>
           ))
         }
-        <li class='z-30'>
+        <li class='z-20'>
           <Anchor
             href={contact.href}
             alternative={contact.current}
@@ -85,7 +86,6 @@ const contact = {
           </Anchor>
         </li>
       </ul>
-
       <input type='checkbox' id='menu' class='hidden nav__check' />
       <label
         for='menu'
@@ -115,37 +115,98 @@ const contact = {
             clip-rule='evenodd'></path></svg
         >
       </label>
-      <nav
-        class='absolute top-[90px] left-0 w-full bg-background-color flex flex-col items-center gap-2 p-4 min-[840px]:hidden z-20 nav__mobile'
-      >
-        <ul class='w-full'>
-          {
-            nav.map(({ href, text, current, ariaLabel }) => (
-              <li class='w-full flex items-center'>
-                <a
-                  href={href}
-                  class:list={[
-                    current &&
-                      'bg-second-color border-none hover:text-third-color rounded-10px',
-                    'text-xl',
-                    text === 'Contacto' && 'nav__contact',
-                    'w-full hover:text-second-color transition-colors focus:outline-offset-4 focus:outline-2 border-b border-fourth-color/10 p-2'
-                  ]}
-                  aria-label={ariaLabel}
-                  aria-current={current ? 'page' : undefined}
-                >
-                  {text}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
     </div>
   </nav>
+  <nav
+    class='absolute top-[75px] left-0 w-full bg-background-color flex flex-col items-center gap-2 p-4 min-[840px]:hidden z-10 nav__mobile'
+  >
+    <ul class='w-full'>
+      {
+        nav.map(({ href, text, current, ariaLabel }) => (
+          <li class='w-full flex items-center'>
+            <a
+              href={href}
+              class:list={[
+                current &&
+                  'bg-second-color border-none hover:text-third-color rounded-10px',
+                'text-xs',
+                text === 'Contacto' && 'nav__contact',
+                'w-full hover:text-second-color transition-colors focus:outline-offset-4 focus:outline-2 border-b border-fourth-color/10 p-2'
+              ]}
+              aria-label={ariaLabel}
+              aria-current={current ? 'page' : undefined}
+            >
+              {text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class='nav__background'></div>
 </header>
 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const header = document.querySelector('#header') as HTMLElement
+    const navMobile = document.querySelector('.nav__mobile') as HTMLElement
+    const background = document.querySelector('.nav__background') as HTMLElement
+    const navCheck = document.querySelector('.nav__check') as HTMLInputElement
+
+    let lastScrollY = window.scrollY
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        const currentScrollY = window.scrollY
+        const scrollDifference = currentScrollY - lastScrollY
+
+        if (scrollDifference > 0 && currentScrollY > 0 && !navCheck.checked) {
+          header.classList.add('header-hide')
+        } else {
+          header.classList.remove('header-hide')
+        }
+
+        if (currentScrollY >= 0) {
+          lastScrollY = currentScrollY
+        }
+      },
+      { passive: true }
+    )
+
+    navCheck.addEventListener('click', () => {
+      if (navCheck.checked) {
+        navMobile.classList.add('display__menu')
+        background.classList.add('display__background')
+      } else {
+        navMobile.classList.remove('display__menu')
+        background.classList.remove('display__background')
+      }
+    })
+
+    document.addEventListener('click', e => {
+      if (e.target !== navMobile && e.target !== background) return
+
+      navCheck.checked = false
+      navMobile.classList.remove('display__menu')
+      background.classList.remove('display__background')
+    })
+  })
+
+  document.addEventListener('astro:after-preparation', () => {
+    const navMobile = document.querySelector('.nav__mobile') as HTMLElement
+    const background = document.querySelector('.nav__background') as HTMLElement
+
+    navMobile.style.display = 'none'
+    background.style.display = 'none'
+  })
+</script>
+
 <style>
+  .header-hide {
+    transform: translateY(-75px);
+  }
+
   .nav__mobile {
     opacity: 0;
     visibility: hidden;
@@ -156,9 +217,31 @@ const contact = {
     transform: translateY(-100%);
   }
 
-  #menu:checked ~ .nav__mobile {
+  .nav__mobile.display__menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .nav__background.display__background {
+    display: block;
+  }
+
+  .nav__background {
+    display: none;
+  }
+
+  @media screen and (max-width: 840px) {
+    .nav__background {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #1b1b1b9d;
+      backdrop-filter: blur(5px);
+      z-index: 9;
+      cursor: pointer;
+    }
   }
 </style>

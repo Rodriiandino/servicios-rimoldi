@@ -19,7 +19,8 @@ export default {
         'max-width': 'calc(1250px + 4rem)'
       },
       padding: {
-        side: '2rem'
+        side: '2rem',
+        'side-sm': '1rem'
       },
       borderRadius: {
         '10px': '10px'

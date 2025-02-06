@@ -12,6 +12,23 @@ const { title } = Astro.params
 const service = (() => {
   return services.find(service => convertTitleToURL(service.title) === title)
 })()
+
+// const images = import.meta.glob<{ default: ImageMetadata }>(
+//   '/src/assets/services/*',
+//   { eager: true }
+// )
+
+// console.log('Images:', images) // Verifica que la importación de imágenes funciona
+
+// function getImagePath(fileName: string | undefined) {
+//   if (!fileName) return null
+//   const path = `/src/assets/services/${fileName}`
+//   return images[path]?.default || null
+// }
+
+// const serviceImage1 = getImagePath(service?.images?.[0]?.url)
+
+// console.log('Service Image 1:', serviceImage1)
 ---
 
 <Layout
@@ -25,11 +42,14 @@ const service = (() => {
       transitionTitle={`service.title-${service?.title}`}
       transitionSubtitle={`service.description-${service?.title}`}
     />
-    <section class='max-w-max-width mx-auto px-side py-6 flex flex-col'>
+    <section
+      class='max-w-max-width mx-auto px-side-sm sm:px-side py-6 flex flex-col'
+    >
       <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
         <picture class='opacity-0' id='fade-in-right'>
           <Image
-            src={'https://placehold.co/625x500/png?text=Imagen+no+disponible'}
+            src={service?.images[0]?.url ||
+              'https://placehold.co/625x500/png?text=Imagen+no+disponible'}
             alt={service?.images[0].alt ?? 'Imagen no disponible'}
             class='w-full h-full object-cover rounded-10px'
             width={625}
@@ -44,11 +64,12 @@ const service = (() => {
       </div>
       <picture class='opacity-0 mt-12' id='fade-in-up'>
         <Image
-          src={'https://placehold.co/1250x300/png?text=Imagen+no+disponible'}
+          src={service?.images[1]?.url ||
+            'https://placehold.co/1250x300/png?text=Imagen+no+disponible'}
           alt={service?.images[1].alt ?? 'Imagen no disponible'}
           class='w-full h-full object-cover rounded-10px'
           width={1250}
-          height={270}
+          height={300}
         />
       </picture>
       <div

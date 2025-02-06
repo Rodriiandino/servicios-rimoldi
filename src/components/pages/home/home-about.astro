@@ -1,42 +1,45 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
+import aboutPerson from '/src/assets/images/about-person.webp'
 ---
 
 <section class='about'>
   <div
-    class='max-w-max-width h-full px-side mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-end'
+    class='max-w-max-width h-full px-side-sm sm:px-side mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-end'
   >
     <div class='w-full lg:w-1/2 self-end flex justify-center'>
-      <Image
-        src='/images/about-person.webp'
-        alt='Logo de Servicios Rimoldi'
-        width='595'
-        height='507'
+      <Picture
+        src={aboutPerson}
+        widths={[408, 508, aboutPerson.width]}
+        sizes={`(max-width: 450px) 408px, (max-width: 550px) 508px, ${aboutPerson.width}px`}
+        formats={['webp']}
+        quality={'max'}
+        alt='Los fundadores de Servicios Rimoldi, Elio padre e hijo.'
       />
     </div>
     <div class='w-full lg:w-1/2 flex flex-col gap-4 self-start lg:py-24 py-16'>
       <h2 class='text-main-color text-2 sm:text-3 tracking-wide z-10'>
         Quienes Somos?
       </h2>
-      <p class='text-xs text-main-color z-10'>
+      <p class='text-xs text-main-color z-10 font-semibold'>
         En Servicios Rimoldi, ubicados en Quillinzo, provincia de Córdoba, nos
         especializamos en movimiento de suelos, excavaciones, zanjeo y limpieza
         de terrenos. Somos una empresa familiar que combina experiencia y
         valores tradicionales para brindar resultados de excelencia en cada
         proyecto.
       </p>
-      <p class='text-xs text-main-color z-10'>
+      <p class='text-xs text-main-color z-10 font-semibold'>
         Nuestra historia comienza en Rosario con Elio padre, quien impulsó esta
         iniciativa y luego se trasladó a Quillinzo en busca de una vida
         tranquila, sin renunciar a su pasión por la calidad y el servicio.
       </p>
-      <p class='text-xs text-main-color z-10'>
+      <p class='text-xs text-main-color z-10 font-semibold'>
         Hoy, trabaja junto a su hijo Elio, fortaleciendo los lazos familiares y
         respaldando la economía local. Este espíritu de cooperación y dedicación
         mejora nuestros servicios y nos posiciona como líderes en nuestra
         región.
       </p>
-      <p class='text-xs text-main-color z-10'>
+      <p class='text-xs text-main-color z-10 font-semibold'>
         Confiar en Servicios Rimoldi significa optar por compromiso, seguridad,
         cercanía y la mejor tecnología para el movimiento de suelos y limpieza
         de terrenos en la provincia de Córdoba.
