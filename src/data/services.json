@@ -9,11 +9,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "nivelaciones.png",
         "alt": "Maquinaria realizando nivelación de terreno"
       },
       {
-        "url": "",
+        "url": "nivelaciones-2.png",
         "alt": "Terreno nivelado listo para construcción"
       }
     ]
@@ -28,11 +28,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "compactaciones.png",
         "alt": "Rolos compactadores en acción"
       },
       {
-        "url": "",
+        "url": "compactaciones-2.png",
         "alt": "Terreno compactado listo para construcción"
       }
     ]
@@ -47,11 +47,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "desmontajes.png",
         "alt": "Equipo realizando desmonte de árboles"
       },
       {
-        "url": "",
+        "url": "desmontajes-2.png",
         "alt": "Terreno libre de vegetación después de desmonte"
       }
     ]
@@ -66,11 +66,11 @@
     ],
     "images": [
       {
-        "url": "",
-        "alt": "Excavadora trabajando en cimientos"
+        "url": "excavaciones.png",
+        "alt": "Excavadora trabajando en pileta"
       },
       {
-        "url": "",
+        "url": "sangria.png",
         "alt": "Zanja para instalación de tuberías"
       }
     ]
@@ -85,12 +85,12 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "limpieza.png",
         "alt": "Equipo cortando pasto en terreno amplio"
       },
       {
-        "url": "",
-        "alt": "Terreno limpio y libre de maleza"
+        "url": "desmalezado.png",
+        "alt": "Uso del desmalezador en terreno con maleza alta"
       }
     ]
   },
@@ -104,12 +104,12 @@
     ],
     "images": [
       {
-        "url": "",
-        "alt": "Galpón industrial en construcción"
+        "url": "montajes.png",
+        "alt": "Equipo moviendo contenedores en obra"
       },
       {
-        "url": "",
-        "alt": "Equipo moviendo contenedores en obra"
+        "url": "montajes-2.png",
+        "alt": "Equipo colocando contenedores en estructura metálica"
       }
     ]
   },
@@ -123,11 +123,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "pilotajes.png",
         "alt": "Equipo realizando perforación profunda"
       },
       {
-        "url": "",
+        "url": "pilotajes-2.png",
         "alt": "Postes colocados en terreno"
       }
     ]
@@ -142,11 +142,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "apertura.png",
         "alt": "Maquinaria abriendo camino en terreno rural"
       },
       {
-        "url": "",
+        "url": "apertura-2.png",
         "alt": "Camino nivelado y listo para uso"
       }
     ]
@@ -161,11 +161,11 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "transporte.png",
         "alt": "Camión auxilio con rampa hidráulica"
       },
       {
-        "url": "",
+        "url": "transporte-2.png",
         "alt": "Vehículo pesado siendo trasladado"
       }
     ]
@@ -180,12 +180,12 @@
     ],
     "images": [
       {
-        "url": "",
+        "url": "martillo.png",
         "alt": "Martillo neumático en uso"
       },
       {
-        "url": "",
-        "alt": "Barredora limpiando área industrial"
+        "url": "platea.png",
+        "alt": "Platea realizada"
       }
     ]
   }

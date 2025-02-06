@@ -7,28 +7,27 @@ import { Image } from 'astro:assets'
 import Anchor from '@components/ui/anchor.astro'
 import ArrowRight from '@components/icons/arrow-right.astro'
 import Phone from '@components/icons/phone.astro'
+import noDisponible from '/src/assets/no-disponible-625x500.png'
+import noDisponible2 from '/src/assets/no-disponible-1250x600.png'
 const { title } = Astro.params
 
 const service = (() => {
   return services.find(service => convertTitleToURL(service.title) === title)
 })()
 
-// const images = import.meta.glob<{ default: ImageMetadata }>(
-//   '/src/assets/services/*',
-//   { eager: true }
-// )
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/services/*',
+  { eager: true }
+)
 
-// console.log('Images:', images) // Verifica que la importación de imágenes funciona
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+  const path = `/src/assets/services/${fileName}`
+  return images[path]?.default || null
+}
 
-// function getImagePath(fileName: string | undefined) {
-//   if (!fileName) return null
-//   const path = `/src/assets/services/${fileName}`
-//   return images[path]?.default || null
-// }
-
-// const serviceImage1 = getImagePath(service?.images?.[0]?.url)
-
-// console.log('Service Image 1:', serviceImage1)
+const serviceImage1 = getImagePath(service?.images?.[0]?.url)
+const serviceImage2 = getImagePath(service?.images?.[1]?.url)
 ---
 
 <Layout
@@ -48,12 +47,10 @@ const service = (() => {
       <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
         <picture class='opacity-0' id='fade-in-right'>
           <Image
-            src={service?.images[0]?.url ||
-              'https://placehold.co/625x500/png?text=Imagen+no+disponible'}
+            src={serviceImage1 || noDisponible}
             alt={service?.images[0].alt ?? 'Imagen no disponible'}
-            class='w-full h-full object-cover rounded-10px'
+            class='w-full object-cover rounded-10px h-[500px]'
             width={625}
-            height={500}
           />
         </picture>
         <div class='flex flex-col gap-4 opacity-0' id='fade-in-left'>
@@ -64,12 +61,10 @@ const service = (() => {
       </div>
       <picture class='opacity-0 mt-12' id='fade-in-up'>
         <Image
-          src={service?.images[1]?.url ||
-            'https://placehold.co/1250x300/png?text=Imagen+no+disponible'}
+          src={serviceImage2 || noDisponible2}
           alt={service?.images[1].alt ?? 'Imagen no disponible'}
-          class='w-full h-full object-cover rounded-10px'
+          class='w-full object-cover rounded-10px h-[600px]'
           width={1250}
-          height={300}
         />
       </picture>
       <div

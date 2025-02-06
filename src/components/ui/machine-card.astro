@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-
+import noDisponible from '/src/assets/no-disponible.png'
 interface Props {
   img: string
   imgAlt: string
@@ -10,6 +10,19 @@ interface Props {
 }
 
 const { img, imgAlt, title, description, index } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/machines/*',
+  { eager: true }
+)
+
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+  const path = `/src/assets/machines/${fileName}`
+  return images[path]?.default || null
+}
+
+const image = getImagePath(img)
 ---
 
 <article
@@ -18,10 +31,11 @@ const { img, imgAlt, title, description, index } = Astro.props
   id='fade-in-up'
 >
   <Image
-    src={img}
+    src={image || noDisponible}
     alt={imgAlt}
     width={290}
     height={290}
+    quality={'max'}
     class='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
   />
   <div

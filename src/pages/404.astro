@@ -1,9 +1,20 @@
 ---
+import Anchor from '@components/ui/anchor.astro'
 import Layout from '@layouts/Layout.astro'
 ---
 
-<Layout title='Home' description="Eliot Rimoldi's personal website">
-  <main>
-    <h1>Eliot Rimoldi</h1>
+<Layout
+  title='Servicios Rimoldi - Movimiento de Suelos y Excavaciones en Calamuchita'
+  description='Especialistas en movimiento de suelos, excavaciones, nivelaciones y limpieza de terrenos en Calamuchita. Servicio confiable con maquinaria moderna como JCB 3CX y JCB 1110T Robot. ¡Contacta hoy!'
+>
+  <main
+    class='h-[calc(100vh-75px-296px)] w-full flex flex-col justify-center items-center bg-background-color'
+  >
+    <h1 class='text-8xl sm:text-9xl text-third-color tracking-widest'>404</h1>
+    <div class='bg-second-color px-2 text-sm rounded rotate-12 absolute'>
+      <p class='text-background-color'>Página no encontrada</p>
+    </div>
+
+    <Anchor href='/' ariaLabel='Volver al inicio'>Volver al inicio</Anchor>
   </main>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import noDisponible from '/src/assets/no-disponible.png'
 
 interface Props {
   img: string
@@ -11,6 +12,19 @@ interface Props {
 }
 
 const { img, imgAlt, title, description, link, index } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/services/*',
+  { eager: true }
+)
+
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+  const path = `/src/assets/services/${fileName}`
+  return images[path]?.default || null
+}
+
+const image = getImagePath(img)
 ---
 
 <article
@@ -22,10 +36,11 @@ const { img, imgAlt, title, description, link, index } = Astro.props
     class='w-[270px] h-[270px] max-[350px]:w-[230px] max-[350px]:h-[230px] overflow-hidden rounded-10px'
   >
     <Image
-      src={img}
+      src={image || noDisponible}
       alt={imgAlt}
-      width='270'
-      height='270'
+      width={270}
+      height={270}
+      quality={'max'}
       class='w-full h-full object-cover transition-transform duration-300 hover:scale-105'
     />
   </picture>
