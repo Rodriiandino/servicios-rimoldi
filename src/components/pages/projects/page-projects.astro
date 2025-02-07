@@ -1,11 +1,11 @@
 ---
-import PageProjectCard from './page-project-card.astro'
 import projects from 'src/data/projects.json'
 import { generateList } from 'src/utils/generate-list'
-import type { ProjectCard } from 'src/types/cards'
+import type { ProjectCard as ProjectCardProps } from 'src/types/cards'
 import PagesHeader from '@components/ui/pages-header.astro'
+import ProjectCard from '@components/ui/project-card.astro'
 
-const projectList = generateList<ProjectCard>(projects, {
+const projectList = generateList<ProjectCardProps>(projects, {
   imageSize: '400x240',
   linkPrefix: '/proyecto/'
 })
@@ -48,7 +48,7 @@ const projectList = generateList<ProjectCard>(projects, {
 >
   {
     projectList.map(project => (
-      <PageProjectCard
+      <ProjectCard
         title={project.title}
         description={project.descriptionCard}
         img={project.img}

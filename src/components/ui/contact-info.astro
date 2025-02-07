@@ -12,11 +12,45 @@ const { title, description, description2 } = Astro.props
   <span class='contact__icon'>
     <slot name='icon' />
   </span>
-  <div class='contact__content'>
+  <nav class='contact__content' aria-label='Información de contacto'>
     <p><strong>{title}</strong></p>
-    <p>{description}</p>
-    <p style="display: {description2 ? 'block' : 'none'}">{description2}</p>
-  </div>
+    {
+      title === 'Teléfono' ? (
+        <a
+          href='https://wa.me/3415610722'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='focus:outline-offset-4 focus:outline-2 hover:underline text-third-color'
+          aria-label='Contáctanos por WhatsApp'
+        >
+          {description}
+        </a>
+      ) : title === 'Email' ? (
+        <a
+          href={`mailto:${description}`}
+          target='_blank'
+          rel='noopener noreferrer'
+          class='focus:outline-offset-4 focus:outline-2 hover:underline text-third-color'
+          aria-label={`Enviar un email a ${description}`}
+        >
+          {description}
+        </a>
+      ) : title === 'Locación' ? (
+        <a
+          href={`https://www.google.com/maps?q=${description}`}
+          target='_blank'
+          rel='noopener noreferrer'
+          class='focus:outline-offset-4 focus:outline-2 hover:underline text-third-color'
+          aria-label={`Ver en Google Maps ${description}`}
+        >
+          {description}
+        </a>
+      ) : (
+        <p>{description}</p>
+      )
+    }
+    {description2 && <p>{description2}</p>}
+  </nav>
 </div>
 
 <style>

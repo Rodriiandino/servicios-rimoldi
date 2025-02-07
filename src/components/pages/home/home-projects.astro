@@ -1,10 +1,10 @@
 ---
-import ProjectCard from '@components/ui/project-card.astro'
 import HomeSection from './ui/home-section.astro'
 import HomeTitle from './ui/home-title.astro'
 import { generateList } from 'src/utils/generate-list'
 import type { ProjectCard as ProjectCardProps } from 'src/types/cards'
 import projects from 'src/data/projects.json'
+import ProjectCard from '@components/ui/project-card.astro'
 
 const projectList = generateList<ProjectCardProps>(projects, {
   linkPrefix: '/proyecto/',
@@ -20,60 +20,22 @@ const projectList = generateList<ProjectCardProps>(projects, {
     link='/proyectos'
     linkText='Ver todas las Obras'
   />
-  <div class='grid md:grid-cols-2 gap-4 py-3'>
-    <div class='grid gap-4'>
-      <ProjectCard
-        img='https://placehold.co/666x400/png'
-        imgAlt={projectList[0].imgAlt}
-        title={projectList[0].title}
-        description={projectList[0].descriptionCard}
-        link={projectList[0].link}
-        width={666}
-        height={400}
-        index={0}
-      />
-      <ProjectCard
-        img='https://placehold.co/666x400/png'
-        imgAlt={projectList[1].imgAlt}
-        title={projectList[1].title}
-        description={projectList[1].descriptionCard}
-        link={projectList[1].link}
-        width={666}
-        height={400}
-        index={1}
-      />
-      <ProjectCard
-        img='https://placehold.co/666x230/png'
-        imgAlt={projectList[2].imgAlt}
-        title={projectList[2].title}
-        description={projectList[2].descriptionCard}
-        link={projectList[2].link}
-        width={666}
-        height={230}
-        index={2}
-      />
-    </div>
-    <div class='grid gap-4'>
-      <ProjectCard
-        img='https://placehold.co/570x678/png'
-        imgAlt={projectList[3].imgAlt}
-        title={projectList[3].title}
-        description={projectList[3].descriptionCard}
-        link={projectList[3].link}
-        width={570}
-        height={678}
-        index={3}
-      />
-      <ProjectCard
-        img='https://placehold.co/570x377/png'
-        imgAlt={projectList[4].imgAlt}
-        title={projectList[4].title}
-        description={projectList[4].descriptionCard}
-        link={projectList[4].link}
-        width={570}
-        height={377}
-        index={4}
-      />
-    </div>
+  <div class='flex flex-wrap gap-4 justify-center py-8'>
+    {
+      projectList.map(project => (
+        <ProjectCard
+          title={project.title}
+          description={project.descriptionCard}
+          img={project.img}
+          imgAlt={project.imgAlt}
+          link={project.link}
+          category={project.category}
+          location={project.location}
+          startDate={project.startDate}
+          endDate={project.endDate}
+          index={project.index}
+        />
+      ))
+    }
   </div>
 </HomeSection>

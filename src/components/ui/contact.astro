@@ -13,6 +13,8 @@ interface Props {
 }
 
 const { className } = Astro.props
+
+// const siteKey = ''
 ---
 
 <div
@@ -79,7 +81,7 @@ const { className } = Astro.props
       </Anchor>
     </div>
   </div>
-  <form class='w-full md:w-1/2 flex flex-col gap-4'>
+  <form class='w-full md:w-1/2 flex flex-col gap-4' id='contact-form'>
     <label for='name' class='text-third-color font-noto text-xs'>Nombre</label>
     <input
       type='text'
@@ -122,8 +124,151 @@ const { className } = Astro.props
       data-theme='light'
       data-size='flexible'
     > -->
-    <p id='response' class='text-xs text-third-color hidden'>
+    <p id='response' class='form__response'>
       Los Datos han sido enviados correctamente.
     </p>
   </form>
 </div>
+
+<!-- <script>
+  import { actions, isInputError } from 'astro:actions'
+
+  function initTurnstile() {
+    try {
+      const turnstileContainer = document.querySelector('.cf-turnstile')
+      if (!turnstileContainer) return
+
+      turnstileContainer.innerHTML = ''
+
+      const turnstileInstance = (window as any).turnstile
+      if (typeof turnstileInstance !== 'undefined') {
+        turnstileInstance.render(turnstileContainer, {
+          sitekey: '',
+          theme: 'light',
+          language: 'es',
+          size: 'flexible'
+        })
+      }
+    } catch (error) {
+      console.error('Error inicializando Turnstile:', error)
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    setTimeout(() => {
+      initTurnstile()
+    }, 0)
+  })
+
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement
+    if (!form) return
+
+    const fields = {
+      name: document.getElementById('name') as HTMLInputElement,
+      email: document.getElementById('email') as HTMLInputElement,
+      message: document.getElementById('message') as HTMLTextAreaElement
+    }
+
+    const allFieldsExist = Object.values(fields).every(field => field !== null)
+    if (!allFieldsExist) return
+
+    const response = document.getElementById('response') as HTMLParagraphElement
+    if (!response) return
+
+    const createErrorElement = (id: string) => {
+      const errorElement = document.createElement('p')
+      errorElement.id = `${id}-error`
+      errorElement.className = 'error__message'
+      return errorElement
+    }
+
+    const errorElements = Object.keys(fields).reduce(
+      (acc, key) => {
+        const field = fields[key as keyof typeof fields]
+        const errorElement = createErrorElement(key)
+        field.parentNode?.appendChild(errorElement)
+        acc[key] = errorElement
+        return acc
+      },
+      {} as Record<string, HTMLParagraphElement>
+    )
+
+    const resetErrors = () => {
+      Object.values(errorElements).forEach(errorElement => {
+        errorElement.classList.remove('form__visible')
+      })
+      response.classList.remove('form__visible')
+    }
+
+    const displayErrors = (errors: Record<string, string[]>) => {
+      Object.entries(errors).forEach(([field, messages]) => {
+        const errorElement = errorElements[field]
+        if (errorElement) {
+          errorElement.textContent = messages.join(', ')
+          errorElement.classList.add('form__visible')
+        }
+      })
+    }
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault()
+      resetErrors()
+      try {
+        const formData = new FormData(form)
+        let turnstileToken = formData.get('cf-turnstile-response') as string
+        formData.delete('cf-turnstile-response')
+        formData.append('token', turnstileToken)
+
+        const { data, error } = await actions.send(formData)
+
+        if (data) {
+          response.classList.add('form__visible')
+          form.reset()
+          initTurnstile()
+        }
+
+        if (isInputError(error)) {
+          displayErrors(error.fields)
+        }
+      } catch (error) {
+        console.error('Error enviando el formulario:', error)
+      }
+    })
+  })
+</script> -->
+
+<style>
+  .error__message,
+  .form__response {
+    display: none;
+  }
+
+  .error__message {
+    color: red;
+    font-size: var(--step--2);
+  }
+
+  .form__visible {
+    display: block;
+    animation: show-message 0.3s ease;
+  }
+
+  .form__response {
+    color: var(--third-color);
+    text-align: center;
+  }
+
+  @keyframes show-message {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

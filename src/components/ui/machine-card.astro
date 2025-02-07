@@ -33,8 +33,8 @@ const image = getImagePath(img)
   <Image
     src={image || noDisponible}
     alt={imgAlt}
-    width={290}
-    height={290}
+    widths={[230, 290]}
+    sizes='(max-width: 350px) 230px, 290px'
     quality={'max'}
     class='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
   />

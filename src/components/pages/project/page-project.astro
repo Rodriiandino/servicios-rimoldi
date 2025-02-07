@@ -8,13 +8,29 @@ import Category from '@components/icons/project/category.astro'
 import Anchor from '@components/ui/anchor.astro'
 import ArrowRight from '@components/icons/arrow-right.astro'
 import Phone from '@components/icons/phone.astro'
-import { Image } from 'astro:assets'
+import { Image, Picture } from 'astro:assets'
 import PagesHeader from '@components/ui/pages-header.astro'
+import noDisponible from '/src/assets/no-disponible-625x500.png'
+import noDisponible2 from '/src/assets/no-disponible.png'
+
 const { title } = Astro.params
 
 const project = (() => {
   return projects.find(project => convertTitleToURL(project.title) === title)
 })()
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/*',
+  { eager: true }
+)
+
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+  const path = `/src/assets/projects/${fileName}`
+  return images[path]?.default || null
+}
+
+const projectImage1 = getImagePath(project?.images?.[0]?.url)
 ---
 
 <Layout
@@ -66,15 +82,17 @@ const project = (() => {
       class='max-w-max-width mx-auto px-side-sm sm:px-side py-6 flex flex-col'
     >
       <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <picture class='opacity-0' id='fade-in-right'>
-          <Image
-            src={'https://placehold.co/625x500/png?text=Imagen+no+disponible'}
+        <div class='opacity-0 overflow-hidden rounded-10px' id='fade-in-right'>
+          <Picture
+            src={projectImage1 || noDisponible}
             alt={project?.images[0].alt ?? 'Imagen no disponible'}
-            class='w-full h-full object-cover rounded-10px'
-            width={625}
-            height={500}
+            class='w-full object-cover rounded-10px h-[500px] transition-transform duration-300 hover:scale-105'
+            widths={[408, 508, 625, 693]}
+            sizes='(max-width: 450px) 408px, (max-width: 550px) 508px, (max-width: 768px) 693px, (min-width: 768px) 625px'
+            formats={['avif', 'webp']}
+            quality={'max'}
           />
-        </picture>
+        </div>
         <div class='flex flex-col gap-4 opacity-0' id='fade-in-left'>
           <h2 class='font-noto font-bold text-2 text-third-color'>
             Descripción del Proyecto
@@ -117,13 +135,12 @@ const project = (() => {
             project?.images
               .map((image, index) => (
                 <Image
-                  src={
-                    'https://placehold.co/290x290/png?text=Imagen+no+disponible'
-                  }
+                  src={getImagePath(image.url) || noDisponible2}
                   alt={'Imagen no disponible'}
                   width={290}
                   height={290}
                   class={'rounded-10px opacity-0'}
+                  quality={'max'}
                   id={'fade-in-up'}
                   data-index={index}
                 />

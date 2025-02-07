@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import convertTitleToURL from 'src/utils/convert_title_to_url'
 import services from 'src/data/services.json'
 import PagesHeader from '@components/ui/pages-header.astro'
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import Anchor from '@components/ui/anchor.astro'
 import ArrowRight from '@components/icons/arrow-right.astro'
 import Phone from '@components/icons/phone.astro'
@@ -45,28 +45,35 @@ const serviceImage2 = getImagePath(service?.images?.[1]?.url)
       class='max-w-max-width mx-auto px-side-sm sm:px-side py-6 flex flex-col'
     >
       <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <picture class='opacity-0' id='fade-in-right'>
-          <Image
+        <div class='opacity-0 overflow-hidden rounded-10px' id='fade-in-right'>
+          <Picture
             src={serviceImage1 || noDisponible}
             alt={service?.images[0].alt ?? 'Imagen no disponible'}
-            class='w-full object-cover rounded-10px h-[500px]'
-            width={625}
+            class='w-full object-cover rounded-10px h-[500px] transition-transform duration-300 hover:scale-105'
+            widths={[408, 508, 625, 693]}
+            sizes='(max-width: 450px) 408px, (max-width: 550px) 508px, (max-width: 768px) 693px, (min-width: 768px) 625px'
+            formats={['avif', 'webp']}
+            quality={'max'}
           />
-        </picture>
+        </div>
         <div class='flex flex-col gap-4 opacity-0' id='fade-in-left'>
           <p>{service?.paragraphs[0]}</p>
           <p>{service?.paragraphs[1]}</p>
           <p>{service?.paragraphs[2]}</p>
         </div>
       </div>
-      <picture class='opacity-0 mt-12' id='fade-in-up'>
-        <Image
+      <div class='opacity-0 mt-12 overflow-hidden rounded-10px' id='fade-in-up'>
+        <Picture
           src={serviceImage2 || noDisponible2}
           alt={service?.images[1].alt ?? 'Imagen no disponible'}
-          class='w-full object-cover rounded-10px h-[600px]'
+          class='w-full object-cover rounded-10px h-[600px] transition-transform duration-300 hover:scale-105'
           width={1250}
+          widths={[408, 508, 693, 1250]}
+          sizes='(max-width: 450px) 408px, (max-width: 550px) 508px, (max-width: 768px) 693px, 1250px'
+          formats={['avif', 'webp']}
+          quality={'max'}
         />
-      </picture>
+      </div>
       <div
         class='min-h-[20rem] flex flex-col justify-center items-center gap-4'
       >

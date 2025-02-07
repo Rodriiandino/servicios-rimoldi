@@ -1,5 +1,9 @@
 ---
-import { Image } from 'astro:assets'
+import Calender from '@components/icons/project/calender.astro'
+import Category from '@components/icons/project/category.astro'
+import Location from '@components/icons/project/location.astro'
+import { Picture } from 'astro:assets'
+import noDisponible from '/src/assets/no-disponible-400x240.png'
 
 interface Props {
   img: string
@@ -7,43 +11,85 @@ interface Props {
   title: string
   description: string
   link: string
-  width: number
-  height: number
+  location: string
+  startDate: string
+  endDate: string
+  category: string
   index: number
 }
 
-const { img, imgAlt, title, description, link, width, height, index } =
-  Astro.props
+const {
+  img,
+  imgAlt,
+  title,
+  description,
+  link,
+  location,
+  startDate,
+  endDate,
+  category,
+  index
+} = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/*',
+  { eager: true }
+)
+
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+  const path = `/src/assets/projects/${fileName}`
+  return images[path]?.default || null
+}
+
+const image = getImagePath(img)
 ---
 
 <article
-  class='bg-background-color group relative flex flex-col gap-3 overflow-hidden shadow-lg shadow-[#F1961C]/10 hover:shadow-[#F1961C]/20 transition-shadow duration-300 opacity-0'
+  class='bg-background-color max-w-[400px] rounded-10px overflow-hidden shadow-lg shadow-[#F1961C]/10 hover:shadow-[#F1961C]/20 transition-shadow duration-300 opacity-0'
   data-index={index}
   id='fade-in-up'
 >
-  <Image
-    src={img}
+  <Picture
+    src={image || noDisponible}
     alt={imgAlt}
-    width={width}
-    height={height}
-    class='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+    formats={['webp']}
+    widths={[308, 358, 400]}
+    sizes='(max-width: 350px) 308px,(max-width: 400px) 358px, 400px'
+    quality={'max'}
   />
-  <div
-    class='absolute inset-0 w-full h-full flex flex-col items-start justify-end py-5 px-6 gap-3 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 overlay'
-  >
-    <h3>
-      <a
-        href={link}
-        class='hover:underline text-[1.4rem] font-noto text-second-color font-medium tracking-tight max-[350px]:text-[1.2rem]'
-        aria-label={`Más información sobre ${title}`}
-        transition:name={`project.title-${title}`}
-      >
-        {title}
-        <span class='sr-only'>proyecto</span>
-      </a>
+  <div class='sm:h-[340px] p-6 flex flex-col justify-between'>
+    <h3
+      class='font-noto font-bold text-1 mb-2 sm:mb-0'
+      transition:name={`project.title-${title}`}
+    >
+      {title}
     </h3>
+    <div class='flex flex-col gap-2 text-xs mb-3 sm:mb-6'>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.location-${title}`}
+      >
+        <Location />
+        <p>{location}</p>
+      </div>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.date-${title}`}
+      >
+        <Calender />
+        <p>{startDate} - {endDate}</p>
+      </div>
+      <div
+        class='flex items-center gap-2 text-xxs sm:text-xs'
+        transition:name={`project.category-${title}`}
+      >
+        <Category />
+        <p>{category}</p>
+      </div>
+    </div>
     <p
-      class='text-xs line-clamp-3'
+      class='text-xs line-clamp-3 mb-3 sm:mb-6'
       transition:name={`project.description-${title}`}
     >
       {description}
@@ -72,14 +118,3 @@ const { img, imgAlt, title, description, link, width, height, index } =
     </footer>
   </div>
 </article>
-
-<style>
-  .overlay {
-    background: linear-gradient(
-      to top,
-      #050505 0%,
-      rgba(5, 5, 5, 0.8) 40%,
-      rgba(5, 5, 5, 0) 100%
-    );
-  }
-</style>
