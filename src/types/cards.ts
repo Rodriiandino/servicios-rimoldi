@@ -12,7 +12,7 @@ export interface Project {
   title: string
   descriptionCard: string
   paragraphs: string[]
-  startDate: string
+  startDate?: string
   endDate: string
   category: string
   location: string

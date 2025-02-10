@@ -7,6 +7,8 @@ import Mail from '@components/icons/contact/mail.astro'
 import Location from '@components/icons/contact/location.astro'
 import Anchor from './anchor.astro'
 import ContactInfo from './contact-info.astro'
+import { Picture } from 'astro:assets'
+import contact from '/src/assets/images/contact.jpg'
 
 interface Props {
   className?: string
@@ -14,7 +16,7 @@ interface Props {
 
 const { className } = Astro.props
 
-// const siteKey = ''
+const siteKey = '0x4AAAAAAA8RfKGHYuwSX5vd'
 ---
 
 <div
@@ -81,194 +83,16 @@ const { className } = Astro.props
       </Anchor>
     </div>
   </div>
-  <form class='w-full md:w-1/2 flex flex-col gap-4' id='contact-form'>
-    <label for='name' class='text-third-color font-noto text-xs'>Nombre</label>
-    <input
-      type='text'
-      placeholder='Tu Nombre'
-      id='name'
-      name='name'
-      required
-      class='font-noto text-xs text-main-color border border-main-color rounded-10px p-2'
-    />
-    <label for='email' class='text-third-color font-noto text-sm'>Email</label>
-    <input
-      type='email'
-      placeholder='Tu Email'
-      id='email'
-      name='email'
-      required
-      class='font-noto text-xs text-main-color border-main-color rounded-10px p-2'
-    />
-    <label for='message' class='text-third-color font-noto text-sm'
-      >Mensaje</label
-    >
-    <textarea
-      id='message'
-      placeholder='Tu Mensaje'
-      name='message'
-      required
-      class='h-full font-noto text-xs text-main-color border-main-color rounded-10px p-2 resize-none min-h-40'
-    ></textarea>
 
-    <button
-      type='submit'
-      class='bg-second-color rounded-10px text-xs text-main-color font-noto p-2 font-semibold py-2 px-4 hover:brightness-[0.8] active:brightness-[0.6] transition-all focus:outline-offset-4 focus:outline-2 focus:brightness-110'
-    >
-      Envíanos tu Mensaje
-    </button>
-    <!-- <div
-      class='cf-turnstile'
-      data-sitekey={siteKey}
-      data-langues='es'
-      data-theme='light'
-      data-size='flexible'
-    > -->
-    <p id='response' class='form__response'>
-      Los Datos han sido enviados correctamente.
-    </p>
-  </form>
+  <div class='w-full md:w-1/2 flex justify-center overflow-hidden rounded-10px'>
+    <Picture
+      src={contact}
+      widths={[508, 690, 605]}
+      sizes={`(max-width: 550px) 508px, (max-width: 767px) 690px, (min-width: 768px) 690px)`}
+      formats={['webp']}
+      quality={'max'}
+      alt='Los fundadores de Servicios Rimoldi, Elio padre e hijo.'
+      class='h-full object-cover rounded-10px hover:scale-105 transform transition-transform'
+    />
+  </div>
 </div>
-
-<!-- <script>
-  import { actions, isInputError } from 'astro:actions'
-
-  function initTurnstile() {
-    try {
-      const turnstileContainer = document.querySelector('.cf-turnstile')
-      if (!turnstileContainer) return
-
-      turnstileContainer.innerHTML = ''
-
-      const turnstileInstance = (window as any).turnstile
-      if (typeof turnstileInstance !== 'undefined') {
-        turnstileInstance.render(turnstileContainer, {
-          sitekey: '',
-          theme: 'light',
-          language: 'es',
-          size: 'flexible'
-        })
-      }
-    } catch (error) {
-      console.error('Error inicializando Turnstile:', error)
-    }
-  }
-
-  document.addEventListener('astro:page-load', () => {
-    setTimeout(() => {
-      initTurnstile()
-    }, 0)
-  })
-
-  document.addEventListener('astro:page-load', () => {
-    const form = document.getElementById('contact-form') as HTMLFormElement
-    if (!form) return
-
-    const fields = {
-      name: document.getElementById('name') as HTMLInputElement,
-      email: document.getElementById('email') as HTMLInputElement,
-      message: document.getElementById('message') as HTMLTextAreaElement
-    }
-
-    const allFieldsExist = Object.values(fields).every(field => field !== null)
-    if (!allFieldsExist) return
-
-    const response = document.getElementById('response') as HTMLParagraphElement
-    if (!response) return
-
-    const createErrorElement = (id: string) => {
-      const errorElement = document.createElement('p')
-      errorElement.id = `${id}-error`
-      errorElement.className = 'error__message'
-      return errorElement
-    }
-
-    const errorElements = Object.keys(fields).reduce(
-      (acc, key) => {
-        const field = fields[key as keyof typeof fields]
-        const errorElement = createErrorElement(key)
-        field.parentNode?.appendChild(errorElement)
-        acc[key] = errorElement
-        return acc
-      },
-      {} as Record<string, HTMLParagraphElement>
-    )
-
-    const resetErrors = () => {
-      Object.values(errorElements).forEach(errorElement => {
-        errorElement.classList.remove('form__visible')
-      })
-      response.classList.remove('form__visible')
-    }
-
-    const displayErrors = (errors: Record<string, string[]>) => {
-      Object.entries(errors).forEach(([field, messages]) => {
-        const errorElement = errorElements[field]
-        if (errorElement) {
-          errorElement.textContent = messages.join(', ')
-          errorElement.classList.add('form__visible')
-        }
-      })
-    }
-
-    form.addEventListener('submit', async event => {
-      event.preventDefault()
-      resetErrors()
-      try {
-        const formData = new FormData(form)
-        let turnstileToken = formData.get('cf-turnstile-response') as string
-        formData.delete('cf-turnstile-response')
-        formData.append('token', turnstileToken)
-
-        const { data, error } = await actions.send(formData)
-
-        if (data) {
-          response.classList.add('form__visible')
-          form.reset()
-          initTurnstile()
-        }
-
-        if (isInputError(error)) {
-          displayErrors(error.fields)
-        }
-      } catch (error) {
-        console.error('Error enviando el formulario:', error)
-      }
-    })
-  })
-</script> -->
-
-<style>
-  .error__message,
-  .form__response {
-    display: none;
-  }
-
-  .error__message {
-    color: red;
-    font-size: var(--step--2);
-  }
-
-  .form__visible {
-    display: block;
-    animation: show-message 0.3s ease;
-  }
-
-  .form__response {
-    color: var(--third-color);
-    text-align: center;
-  }
-
-  @keyframes show-message {
-    0% {
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>

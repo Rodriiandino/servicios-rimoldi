@@ -50,20 +50,26 @@ const image = getImagePath(img)
   data-index={index}
   id='fade-in-up'
 >
-  <Picture
-    src={image || noDisponible}
-    alt={imgAlt}
-    formats={['webp']}
-    widths={[308, 358, 400]}
-    sizes='(max-width: 350px) 308px,(max-width: 400px) 358px, 400px'
-    quality={'max'}
-  />
+  <div class='max-h-[240px] overflow-hidden flex justify-center items-center'>
+    <Picture
+      src={image || noDisponible}
+      alt={imgAlt}
+      formats={['webp']}
+      widths={[308, 358, 400]}
+      sizes='(max-width: 350px) 308px,(max-width: 400px) 358px, 400px'
+      quality={'max'}
+      class='transition-transform duration-300 hover:scale-105'
+    />
+  </div>
   <div class='sm:h-[340px] p-6 flex flex-col justify-between'>
-    <h3
-      class='font-noto font-bold text-1 mb-2 sm:mb-0'
-      transition:name={`project.title-${title}`}
-    >
-      {title}
+    <h3 transition:name={`project.title-${title}`}>
+      <a
+        href={link}
+        class='font-noto font-bold text-second-color text-1 mb-2 sm:mb-0 line-clamp-1 hover:underline'
+      >
+        {title}
+        <span class='sr-only'>proyecto</span>
+      </a>
     </h3>
     <div class='flex flex-col gap-2 text-xs mb-3 sm:mb-6'>
       <div
@@ -78,7 +84,17 @@ const image = getImagePath(img)
         transition:name={`project.date-${title}`}
       >
         <Calender />
-        <p>{startDate} - {endDate}</p>
+        <p>
+          {
+            startDate && (
+              <>
+                {startDate}
+                <span class='mx-1'>-</span>
+              </>
+            )
+          }
+          {endDate}
+        </p>
       </div>
       <div
         class='flex items-center gap-2 text-xxs sm:text-xs'

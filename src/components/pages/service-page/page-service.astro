@@ -50,8 +50,8 @@ const serviceImage2 = getImagePath(service?.images?.[1]?.url)
             src={serviceImage1 || noDisponible}
             alt={service?.images[0].alt ?? 'Imagen no disponible'}
             class='w-full object-cover rounded-10px h-[500px] transition-transform duration-300 hover:scale-105'
-            widths={[408, 508, 625, 693]}
-            sizes='(max-width: 450px) 408px, (max-width: 550px) 508px, (max-width: 768px) 693px, (min-width: 768px) 625px'
+            widths={[408, 625, 693]}
+            sizes='(max-width: 450px) 408px, (max-width: 768px) 693px, (min-width: 768px) 625px'
             formats={['webp']}
             quality={'max'}
           />
@@ -69,7 +69,7 @@ const serviceImage2 = getImagePath(service?.images?.[1]?.url)
           class='w-full object-cover rounded-10px h-[600px] transition-transform duration-300 hover:scale-105'
           width={1250}
           widths={[408, 508, 693, 1250]}
-          sizes='(max-width: 450px) 408px, (max-width: 550px) 508px, (max-width: 768px) 693px, 1250px'
+          sizes='(max-width: 450px) 408px, (max-width: 768px) 693px, 1250px'
           formats={['webp']}
           quality={'max'}
         />

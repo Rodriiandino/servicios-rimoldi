@@ -1,191 +1,167 @@
 [
   {
-    "title": "Excavación en terreno",
-    "descriptionCard": "Excavación de terreno para construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+    "title": "Montaje de Contenedor",
+    "descriptionCard": "Se trasladó y se efectuó un montaje de contenedor sobre platea en Villa Quillinzo, Córdoba.",
     "paragraphs": [
-      "Excavación de terreno para construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
-      "Se realizó la excavación de 100 m2 de terreno para la construcción de una vivienda unifamiliar en Quillinzo, Córdoba. Se retiraron 50 m3 de tierra y se niveló el terreno para la construcción de la vivienda."
+      "Este proyecto de montaje de contenedor incluyó el traslado seguro y profesional de la estructura, seguido de un montaje preciso sobre una platea diseñada para optimizar el uso del espacio.",
+      "Con más de 40 años de experiencia, Servicios Rimoldi empleó maquinaria de alta tecnología para garantizar un montaje que cumpla con los estándares de calidad y seguridad en Quillinzo, Córdoba."
     ],
-    "startDate": "2021-09-01",
-    "endDate": "2021-09-15",
-    "category": "Construcción",
+    "startDate": "",
+    "endDate": "2025-01-23",
+    "category": "Montaje de Contenedor",
     "location": "Quillinzo, Córdoba",
     "testimony": {
-      "author": "Juan Pérez",
-      "text": "Excelente trabajo de nivelación de terreno. Muy profesionales y eficientes."
+      "author": "",
+      "text": ""
     },
     "images": [
       {
-        "url": "",
-        "alt": ""
+        "url": "project-montaje-1.png",
+        "alt": "Camión con grúa realizando montaje de contenedor"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-montaje-2.png",
+        "alt": "Montaje de contenedor sobre platea"
       },
       {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
+        "url": "project-montaje-3.png",
+        "alt": "Montaje de contenedor sobre platea"
       }
     ]
   },
   {
-    "title": "Construcción de vivienda unifamiliar",
-    "descriptionCard": "Construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
+    "title": "Canalización Subterránea",
+    "descriptionCard": "Canalización subterránea de media tensión para luces de autovía N6 en Almafuerte - Río Tercero.",
     "paragraphs": [
-      "Construcción de vivienda unifamiliar en Quillinzo, Córdoba.",
-      "Se construyó una vivienda unifamiliar de 100 m2 en Quillinzo, Córdoba. La vivienda cuenta con 2 dormitorios, 1 baño, cocina, comedor y living. Se utilizó ladrillo visto y techo de chapa."
+      "Este proyecto de canalización subterránea implicó la instalación de media tensión para el sistema de iluminación en la autovía N6, mejorando la eficiencia y seguridad en el trazado.",
+      "Con la experiencia acumulada de más de 40 años y el uso de tecnología avanzada, Servicios Rimoldi ejecutó una instalación robusta y confiable en Almafuerte - Río Tercero."
     ],
-    "startDate": "2021-09-16",
-    "endDate": "2022-01-15",
-    "category": "Construcción",
-    "location": "Quillinzo, Córdoba",
+    "startDate": "2023-02-28",
+    "endDate": "2023-06-20",
+    "category": "Canalización Subterránea",
+    "location": "Almafuerte - Río Tercero",
     "testimony": {
-      "author": "María Gómez",
-      "text": "Estoy muy contenta con mi nueva casa. La construcción es de excelente calidad y el equipo de trabajo es muy profesional."
+      "author": "",
+      "text": ""
     },
     "images": [
       {
-        "url": "",
-        "alt": ""
+        "url": "project-canalizacion-1.png",
+        "alt": "Máquina usando martillo neumático para realizar canalización subterránea"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-canalizacion-2.png",
+        "alt": "Máquina usando martillo neumático para realizar canalización subterránea"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-canalizacion-3.png",
+        "alt": "Máquina usando martillo neumático para realizar canalización subterránea"
       },
       {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
+        "url": "project-canalizacion-4.png",
+        "alt": "Máquina usando martillo neumático para realizar canalización subterránea"
       }
     ]
   },
   {
-    "title": "Construcción de piscina",
-    "descriptionCard": "Construcción de piscina en Quillinzo, Córdoba.",
+    "title": "Extracción, Limpieza y Desparramo",
+    "descriptionCard": "Extracción de escombro, limpieza de terreno y desparramo de tierra negra en Villa Quillinzo, Córdoba.",
     "paragraphs": [
-      "Construcción de piscina en Quillinzo, Córdoba.",
-      "Se construyó una piscina de 8x4 m en Quillinzo, Córdoba. La piscina cuenta con un sistema de filtrado y limpieza automático. Se utilizó revestimiento de venecitas y borde atérmico."
+      "El proyecto consistió en la extracción de escombros y tierra negra, seguido de una limpieza y desparramo minucioso del terreno para dejar una superficie uniforme y preparada para futuras construcciones.",
+      "Servicios Rimoldi, respaldado por más de 40 años de experiencia en movimiento de suelos, utilizó equipos de última generación para lograr resultados óptimos en Villa Quillinzo, Córdoba."
     ],
-    "startDate": "2022-01-16",
-    "endDate": "2022-02-15",
-    "category": "Construcción",
+    "startDate": "",
+    "endDate": "2024-03-13",
+    "category": "Extracción - Limpieza",
     "location": "Quillinzo, Córdoba",
     "testimony": {
-      "author": "Carlos Rodríguez",
-      "text": "La piscina quedó espectacular. Muy buen trabajo y excelente atención."
+      "author": "",
+      "text": ""
     },
     "images": [
       {
-        "url": "",
-        "alt": ""
+        "url": "project-extraccion-1.png",
+        "alt": "Suelo limpio y desparramado"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-extraccion-2.png",
+        "alt": "Suelo limpio y desparramado con maquinaria"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-extraccion-3.png",
+        "alt": "Casa con el suelo del patio limpio y desparramado"
       },
       {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
+        "url": "project-extraccion-4.png",
+        "alt": "Suelo limpio y desparramado"
       }
     ]
   },
   {
-    "title": "Construcción de quincho",
-    "descriptionCard": "Construcción de quincho en Quillinzo, Córdoba.",
+    "title": "Arreglo de Calle",
+    "descriptionCard": "Arreglo de calle de tierra en Embalse, Córdoba.",
     "paragraphs": [
-      "Construcción de quincho en Quillinzo, Córdoba.",
-      "Se construyó un quincho de 30 m2 en Quillinzo, Córdoba. El quincho cuenta con parrilla, mesada, bacha y baño. Se utilizó ladrillo visto y techo de chapa."
+      "El proyecto de arreglo de calle de tierra en Embalse, Córdoba, incluyó la nivelación, compactación y limpieza integral de la vía para mejorar la accesibilidad y seguridad.",
+      "Gracias a la experiencia de más de 40 años y el uso de maquinaria especializada, Servicios Rimoldi optimizó la infraestructura vial de la zona, ofreciendo resultados duraderos y de alta calidad."
     ],
-    "startDate": "2022-02-16",
-    "endDate": "2022-03-15",
-    "category": "Construcción",
-    "location": "Quillinzo, Córdoba",
+    "startDate": "",
+    "endDate": "2024-02-21",
+    "category": "Extracción - Limpieza",
+    "location": "Embalse, Córdoba",
     "testimony": {
-      "author": "Ana Martínez",
-      "text": "El quincho quedó hermoso. Muy buena calidad de construcción y excelente atención."
+      "author": "",
+      "text": ""
     },
     "images": [
       {
-        "url": "",
-        "alt": ""
+        "url": "project-calle-1.png",
+        "alt": "Máquina arreglando calle de tierra"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-calle-2.png",
+        "alt": "Calle de tierra arreglada"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-calle-3.png",
+        "alt": "Máquina cargadora de tierra"
       },
       {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
+        "url": "project-calle-4.png",
+        "alt": "Máquina arreglando calle de tierra"
       }
     ]
   },
   {
-    "title": "Construcción de galpón",
-    "descriptionCard": "Construcción de galpón en Quillinzo, Córdoba.",
+    "title": "Desmalezado Raleado para Loteo 'El Cedron'",
+    "descriptionCard": "Desmalezado y raleo para loteo 'El Cedron' en Villa Ciudad Parque, Córdoba.",
     "paragraphs": [
-      "Construcción de galpón en Quillinzo, Córdoba.",
-      "Se construyó un galpón de 100 m2 en Quillinzo, Córdoba. El galpón cuenta con portón corredizo y techo de chapa. Se utilizó ladrillo visto y techo de chapa."
+      "Este proyecto de desmalezado y raleo en el loteo 'El Cedron' se centró en la eliminación de vegetación invasora y en la preparación del terreno para el desarrollo urbanístico.",
+      "Con más de 40 años de experiencia, Servicios Rimoldi utilizó técnicas modernas y equipos especializados para transformar el área, logrando un acabado limpio y ordenado en Villa Ciudad Parque, Córdoba."
     ],
-    "startDate": "2022-03-16",
-    "endDate": "2022-04-15",
-    "category": "Construcción",
-    "location": "Quillinzo, Córdoba",
+    "startDate": "2024-07-22",
+    "endDate": "2024-08-28",
+    "category": "Desmalezado",
+    "location": "Villa Ciudad Parque, Córdoba",
     "testimony": {
-      "author": "Pedro López",
-      "text": "Muy buen trabajo de construcción de galpón. Muy profesionales y eficientes."
+      "author": "",
+      "text": ""
     },
     "images": [
       {
-        "url": "",
-        "alt": ""
+        "url": "project-desmalezado-1.png",
+        "alt": "Máquina Desmalezadora"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-desmalezado-2.png",
+        "alt": "Bosque desmalezado"
       },
       {
-        "url": "",
-        "alt": ""
+        "url": "project-desmalezado-3.png",
+        "alt": "Lugar desmalezado"
       },
       {
-        "url": "",
-        "alt": ""
-      },
-      {
-        "url": "",
-        "alt": ""
+        "url": "project-desmalezado-4.png",
+        "alt": "Máquina Desmalezadora en acción"
       }
     ]
   }
