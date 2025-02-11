@@ -79,6 +79,20 @@ const descriptions = [
     z-index: 1;
   }
 
+  @media screen and (max-width: 1280px) {
+    .bg-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('/images/hero-tablet.webp');
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .bg-hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('/images/hero-mobile.webp');
+    }
+  }
+
   .bg-hero::after {
     content: '';
     position: absolute;
