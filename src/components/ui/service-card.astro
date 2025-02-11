@@ -49,6 +49,7 @@ const image = getImagePath(img)
       <h3
         class='text-[1.4rem] font-noto text-third-color font-medium tracking-tight max-[350px]:text-[1.2rem]'
         transition:name={`service.title-${title}`}
+        aria-label={`Titulo del servicio ${title}`}
       >
         {title}
         <span class='sr-only'>servicio</span>
@@ -67,6 +68,7 @@ const image = getImagePath(img)
         aria-label={'Ir a ' + title + ' para más información'}
       >
         Más información
+        <span class='sr-only'>sobre {title}</span>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
