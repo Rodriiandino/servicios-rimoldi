@@ -90,7 +90,7 @@ const projectImage1 = getImagePath(project?.images?.[0]?.url)
             widths={[408, 625, 693]}
             sizes='(max-width: 450px) 408px, (max-width: 768px) 693px, (min-width: 768px) 625px'
             formats={['webp']}
-            quality={'max'}
+            quality={90}
           />
         </div>
         <div class='flex flex-col gap-4 opacity-0' id='fade-in-left'>
@@ -134,7 +134,7 @@ const projectImage1 = getImagePath(project?.images?.[0]?.url)
       </div>
       <div class='flex flex-col gap-4 mt-12'>
         <h2 class='font-noto font-bold text-2 text-center'>Galería</h2>
-        <div class='flex gap-4 flex-wrap justify-center md:justify-between'>
+        <div class='flex gap-4 flex-wrap justify-center'>
           {
             project?.images
               .map((image, index) => (
@@ -144,7 +144,7 @@ const projectImage1 = getImagePath(project?.images?.[0]?.url)
                   width={290}
                   height={290}
                   class={'rounded-10px opacity-0'}
-                  quality={'max'}
+                  quality={90}
                   id={'fade-in-up'}
                   data-index={index}
                 />
