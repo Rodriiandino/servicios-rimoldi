@@ -24,10 +24,11 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 <title>{title}</title>
 <meta charset='UTF-8' />
 <meta name='description' content={description} />
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 <link rel='canonical' href={canonicalURL} />
 <meta name='generator' content={Astro.generator} />
-<meta name='viewport' content='width=device-width' />
 <meta name='theme-color' content='#f1961c' />
+
 <link
   rel='preload'
   href='/fonts/quicksilver_400-webfont.woff2'
@@ -38,25 +39,131 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 
 <meta
   name='keywords'
-  content='movimiento de suelos Calamuchita, excavaciones terrenos, nivelación de terrenos, desmonte de árboles, transporte maquinaria pesada, pilotajes estructurales'
+  content='movimiento de suelos Calamuchita, excavaciones Calamuchita, alquiler maquinaria pesada, nivelación terrenos, desmonte y limpieza terrenos, retroexcavadora JCB 3CX, mini cargadora construcción, apertura calles Calamuchita, compactación suelos profesional, zanjeo industrial, servicios excavación, empresa movimiento suelos familiar, presupuesto excavación sin cargo, maquinaria construcción moderna, operadores certificados excavación'
 />
+<meta
+  name='news_keywords'
+  content='movimiento suelos, excavaciones, construcción, Calamuchita, maquinaria pesada'
+/>
+
+<meta name='author' content='Servicios Rimoldi' />
 
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:creator' content='@Rodriiandino1' />
 <meta name='twitter:title' content={title} />
 <meta name='twitter:description' content={description} />
 <meta name='twitter:image' content={new URL(image, Astro.url)} />
+<meta
+  name='twitter:image:alt'
+  content='Servicios de movimiento de suelos en Calamuchita'
+/>
 
 <meta property='og:image' content={new URL(image, Astro.url)} />
+<meta
+  property='og:image:alt'
+  content='Servicios de movimiento de suelos en Calamuchita'
+/>
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
 <meta property='og:url' content={Astro.url} />
-<meta property='og:site_name' content='Servicios Rimoldi' />
+<meta
+  property='og:site_name'
+  content='Servicios Rimoldi - Movimiento de Suelos Calamuchita'
+/>
 <meta property='og:type' content='website' />
 <meta property='og:locale' content='es_AR' />
 
-<meta name='robots' content='index, follow' />
+<meta
+  property='business:contact_data:street_address'
+  content='Villa Quillinzo'
+/>
+<meta property='business:contact_data:locality' content='Calamuchita' />
+<meta property='business:contact_data:region' content='Córdoba' />
+<meta property='business:contact_data:country_name' content='Argentina' />
+
+<script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Servicios Rimoldi",
+    "description": "Empresa familiar con más de 15 años de experiencia en movimiento de suelos y excavaciones en Calamuchita. Alquiler de maquinaria pesada con operador experto para todo tipo de obras. ¡Solicita tu presupuesto sin cargo!",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Villa Quillinzo",
+      "addressLocality": "Calamuchita",
+      "addressRegion": "Córdoba",
+      "addressCountry": "Argentina"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -32.2234072,
+      "longitude": -64.52596
+    },
+    "telephone": "+54 3415 610722",
+    "email": "rimoldi.elio78@gmail.com",
+    "url": "https://serviciosrimoldi.com",
+    "sameAs": [
+      "https://www.facebook.com/elio.lakd",
+      "https://www.instagram.com/servicios_rimoldi/"
+    ]
+  }
+</script>
+
+<script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿En qué localidades de Calamuchita ofrecen servicios de movimiento de suelos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En Servicios Rimoldi, brindamos servicios de movimiento de suelos en toda la región de Calamuchita, incluyendo Santa Rosa de Calamuchita, Villa General Belgrano, Embalse, Villa Quillinzo y áreas circundantes. Nuestra ubicación en Villa Quillinzo nos permite ofrecer respuestas rápidas y eficientes en toda la zona."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué maquinaria utilizan para trabajos de excavación y nivelación de terrenos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Disponemos de una flota moderna que incluye retroexcavadoras JCB 3CX, minicargadoras JCB 1110T con orugas, camiones con plancha y equipos especializados. Toda nuestra maquinaria recibe mantenimiento regular y es operada por personal certificado para garantizar trabajos seguros y de alta calidad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es su experiencia en el sector de movimiento de suelos y excavaciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con más de 40 años de experiencia en el sector, Servicios Rimoldi es una empresa familiar que ha participado en más de 500 proyectos exitosos. Nuestro profundo conocimiento del terreno y las necesidades específicas de la región de Calamuchita nos avalan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ofrecen presupuestos sin cargo para servicios de excavación y nivelación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, en Servicios Rimoldi ofrecemos presupuestos sin cargo. El proceso es sencillo: nos contactas, visitamos tu terreno para evaluar el proyecto y, en un plazo de 24 a 48 horas, te proporcionamos una cotización detallada. Consideramos factores como el tipo de suelo, accesibilidad y especificaciones del proyecto para brindarte el mejor precio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tipos de proyectos de movimiento de suelos y excavaciones realizan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Realizamos una amplia gama de trabajos, incluyendo excavaciones para cimientos, nivelación de terrenos, apertura de calles, zanjeo para servicios, limpieza y desmonte de terrenos, compactación de suelos y movimiento de grandes volúmenes de tierra. Cada proyecto se aborda de manera personalizada según tus necesidades específicas."
+        }
+      }
+    ]
+  }
+</script>
+
+<meta
+  name='robots'
+  content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+/>
 <meta name='googlebot' content='index, follow' />
+<meta name='bingbot' content='index, follow' />
 
 <link rel='icon' type='image/png' href='/favicon-96x96.png' sizes='96x96' />
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />

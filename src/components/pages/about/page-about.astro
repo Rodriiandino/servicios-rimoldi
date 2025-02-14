@@ -3,9 +3,48 @@ import Eye from '@components/icons/about/eye.astro'
 import Target from '@components/icons/about/target.astro'
 import Anchor from '@components/ui/anchor.astro'
 import Feature from '@components/ui/feature.astro'
+import FaqItem from '@components/ui/faq-item.astro'
 import PagesHeader from '@components/ui/pages-header.astro'
 import { Picture } from 'astro:assets'
 import aboutPerson from '/src/assets/images/about-person.webp'
+
+const faqs = [
+  {
+    id: 'faq-1',
+    question:
+      '¿En qué localidades de Calamuchita ofrecen servicios de movimiento de suelos?',
+    answer:
+      'En Servicios Rimoldi, brindamos servicios de movimiento de suelos en toda la región de Calamuchita, incluyendo Santa Rosa de Calamuchita, Villa General Belgrano, Villa Quillinzo y áreas circundantes. Nuestra ubicación en Villa Quillinzo nos permite ofrecer respuestas rápidas y eficientes en toda la zona.'
+  },
+  {
+    id: 'faq-2',
+    question:
+      '¿Qué maquinaria utilizan para trabajos de excavación y nivelación de terrenos?',
+    answer:
+      'Disponemos de una flota moderna que incluye retroexcavadoras JCB 3CX, minicargadoras JCB 1110T con orugas, camiones con plancha y equipos especializados. Toda nuestra maquinaria recibe mantenimiento regular y es operada por personal certificado para garantizar trabajos seguros y de alta calidad.'
+  },
+  {
+    id: 'faq-3',
+    question:
+      '¿Cuál es su experiencia en el sector de movimiento de suelos y excavaciones?',
+    answer:
+      'Con más de 40 años de experiencia en el sector, Servicios Rimoldi es una empresa familiar que ha participado en más de 500 proyectos exitosos. Nuestro profundo conocimiento del terreno y las necesidades específicas de la región de Calamuchita nos avalan.'
+  },
+  {
+    id: 'faq-4',
+    question:
+      '¿Ofrecen presupuestos sin cargo para servicios de excavación y nivelación?',
+    answer:
+      'Sí, en Servicios Rimoldi ofrecemos presupuestos sin cargo. El proceso es sencillo: nos contactas, visitamos tu terreno para evaluar el proyecto y, en un plazo de 24 a 48 horas, te proporcionamos una cotización detallada. Consideramos factores como el tipo de suelo, accesibilidad y especificaciones del proyecto para brindarte el mejor precio.'
+  },
+  {
+    id: 'faq-5',
+    question:
+      '¿Qué tipos de proyectos de movimiento de suelos y excavaciones realizan?',
+    answer:
+      'Realizamos una amplia gama de trabajos, incluyendo excavaciones para cimientos, nivelación de terrenos, apertura de calles, zanjeo para servicios, limpieza y desmonte de terrenos, compactación de suelos y movimiento de grandes volúmenes de tierra. Cada proyecto se aborda de manera personalizada según tus necesidades específicas.'
+  }
+]
 ---
 
 <PagesHeader
@@ -120,6 +159,19 @@ import aboutPerson from '/src/assets/images/about-person.webp'
     <Anchor href='/contacto' ariaLabel='Ir a la página de contacto'
       >Cotizar mi proyecto</Anchor
     >
+  </div>
+</section>
+
+<section class='max-w-max-width px-side-sm sm:px-side mx-auto py-16'>
+  <div class='text-center mb-12 opacity-0' id='fade-in-down'>
+    <h3 class='font-noto text-2 md:text-3 font-bold'>Preguntas Frecuentes</h3>
+    <p class='text-xs'>
+      Resolvemos tus dudas sobre nuestros servicios de movimiento de suelos
+    </p>
+  </div>
+
+  <div class='flex flex-col gap-4 opacity-0' id='fade-in-up'>
+    {faqs.map(faq => <FaqItem {...faq} />)}
   </div>
 </section>
 

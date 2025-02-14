@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://serviciosrimoldi.com
+
+# Sitemaps
+Sitemap: https://serviciosrimoldi.com/sitemap-index.xml

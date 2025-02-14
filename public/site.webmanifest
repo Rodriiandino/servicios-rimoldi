@@ -1,21 +1,73 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Servicios Rimoldi - Movimiento de Suelos",
+  "short_name": "Servicios Rimoldi",
+  "description": "Servicios profesionales de movimiento de suelos en Calamuchita. Excavaciones, nivelaciones y obras civiles con maquinaria JCB.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#f1961c",
+  "orientation": "any",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "screenshots": [
+    {
+      "src": "/images/hero.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Servicios de Movimiento de Suelos"
+    },
+    {
+      "src": "/images/hero-mobile.webp",
+      "sizes": "750x1334",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Vista móvil de Servicios Rimoldi"
+    }
+  ],
+  "categories": ["business", "construction", "services"],
+  "lang": "es-AR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Contactar",
+      "url": "/contacto",
+      "description": "Solicitar presupuesto"
+    },
+    {
+      "name": "Servicios",
+      "url": "/servicios",
+      "description": "Ver nuestros servicios"
+    },
+    {
+      "name": "Nosotros",
+      "url": "/sobre-nosotros",
+      "description": "Conocer más sobre nosotros"
+    },
+    {
+      "name": "Inicio",
+      "url": "/",
+      "description": "Volver al inicio"
+    },
+    {
+      "name": "Proyectos",
+      "url": "/proyectos",
+      "description": "Leer nuestras novedades"
+    }
+  ]
 }
