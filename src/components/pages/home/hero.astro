@@ -149,7 +149,7 @@ const descriptions = [
   }
 </style>
 
-<script>
+<script is:inline>
   const descriptions = [
     'Especialistas en nivelaciones de terrenos y calles para proyectos de construcción.',
     'Compactaciones con maquinaria avanzada, garantizando estabilidad y calidad.',
@@ -159,14 +159,14 @@ const descriptions = [
   ]
 
   class AnimatedDescription {
-    container: HTMLElement
-    descriptions: string[]
-    currentIndex: number
-    paragraph: HTMLParagraphElement | null
-    isAnimating: boolean
-    prefersReducedMotion: boolean
+    container
+    descriptions
+    currentIndex
+    paragraph
+    isAnimating
+    prefersReducedMotion
 
-    constructor(container: HTMLElement, descriptions: string[]) {
+    constructor(container, descriptions) {
       this.container = container
       this.descriptions = descriptions
       this.currentIndex = 0

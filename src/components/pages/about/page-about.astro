@@ -180,3 +180,46 @@ const faqs = [
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
 </style>
+
+<script is:inline>
+  const initializeSingleFAQ = item => {
+    const button = item.querySelector('button')
+    const answerContainer = item.querySelector('.answer-container')
+    const answer = answerContainer?.querySelector('p')
+
+    if (!button || !answerContainer || !answer) return
+
+    const updateHeight = () => {
+      if (button.getAttribute('aria-expanded') === 'true') {
+        answerContainer.style.height = `${answer.offsetHeight}px`
+      }
+    }
+
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true'
+
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          const otherButton = otherItem.querySelector('button')
+          const otherContainer = otherItem.querySelector('.answer-container')
+          if (otherButton?.getAttribute('aria-expanded') === 'true') {
+            otherButton.setAttribute('aria-expanded', 'false')
+            otherContainer.style.height = '0px'
+          }
+        }
+      })
+
+      button.setAttribute('aria-expanded', (!isExpanded).toString())
+      answerContainer.style.height = isExpanded
+        ? '0px'
+        : `${answer.offsetHeight}px`
+    })
+
+    window.addEventListener('resize', updateHeight)
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const faqItems = document.querySelectorAll('.faq-item')
+    faqItems.forEach(initializeSingleFAQ)
+  })
+</script>

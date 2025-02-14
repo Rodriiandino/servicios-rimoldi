@@ -8,12 +8,12 @@ export default {
         noto: ['Noto Sans Variable', 'sans-serif']
       },
       colors: {
-        'main-color': 'var(--main-color)',
-        'second-color': 'var(--second-color)',
-        'third-color': 'var(--third-color)',
-        'fourth-color': 'var(--fourth-color)',
-        'fifth-color': 'var(--fifth-color)',
-        'background-color': 'var(--background-color)'
+        'main-color': '#050505',
+        'second-color': '#f1961c',
+        'third-color': '#f8fbfa',
+        'fourth-color': '#777777',
+        'fifth-color': '#0a0a0a',
+        'background-color': '#050505'
       },
       maxWidth: {
         'max-width': 'var(--max-width)'
